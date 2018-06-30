@@ -1,3 +1,25 @@
+.rbc-calendar {
+  font-size: 14px;
+  padding: 0 40px;
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  flex: 1;
+  min-height: 900px;
+}
+
+.rbc-toolbar-label {
+  font-size: 50px;
+}
+
+.rbc-event {
+  background-color: #4f81a0;
+}
+
+.rbc-event-content {
+  background-color: #4f81a0;
+}
+
 .App {
   text-align: center;
 }
