@@ -1,4 +1,4 @@
-export default [
+const Saturday = [
     {
       id: 0,
       title: 'Rest',
@@ -1125,7 +1125,10 @@ export default [
       start: new Date(2018, 10, 11),
       end: new Date(2018, 10, 11),
       desc: 'Saturday'
-    },
+    }
+  ];
+
+  const Sunday = [
     {
       id: 161,
       title: 'Rest',
@@ -2253,4 +2256,6 @@ export default [
       end: new Date(2018, 10, 11),
       desc: 'Sunday'
     }
-  ]
+  ];
+
+  export { Saturday, Sunday };
