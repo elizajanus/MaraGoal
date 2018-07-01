@@ -1,8 +1,8 @@
-import React from "react";
-import TextField from "material-ui/TextField";
-import RaisedButton from "material-ui/RaisedButton";
+import React, { Component } from 'react';
+//import { TextField } from "material-ui/TextField";
+//import { RaisedButton } from "material-ui/RaisedButton";
 
-export default class Form extends React.Component {
+class DiaryApp extends Component {
   state = {
     dateOfRun: "",
     runningTime: "",
@@ -47,8 +47,9 @@ export default class Form extends React.Component {
 
   render() {
     return (
+      <div className="container">
       <form>
-        <TextField
+        <div
           name="dateofRun"
           hintText="ex 10/10/2018"
           floatingLabelText="Date of Run"
@@ -57,7 +58,7 @@ export default class Form extends React.Component {
           floatingLabelFixed
         />
         <br />
-        <TextField
+        <div
           name="runningTime"
           hintText="ex 9:30"
           floatingLabelText="Average Pace (mm:ss)"
@@ -66,7 +67,7 @@ export default class Form extends React.Component {
           floatingLabelFixed
         />
         <br />
-        <TextField
+        <div
           name="runningDistance"
           hintText="ex 14 mi"
           floatingLabelText="Running Distance (mi or km)"
@@ -75,7 +76,7 @@ export default class Form extends React.Component {
           floatingLabelFixed
         />
         <br />
-        <TextField
+        <div
           name="runningSurface"
           hintText="ex Road, Track, Trail, Beach, etc..."
           floatingLabelText="Running Surface "
@@ -84,7 +85,7 @@ export default class Form extends React.Component {
           floatingLabelFixed
         />
         <br />
-        <TextField
+        <div
           name="runningInjury"
           hintText="ex None, Knee, Ankle, Neck, Back, "
           floatingLabelText="Current Injuries"
@@ -93,7 +94,7 @@ export default class Form extends React.Component {
           floatingLabelFixed
         />
         <br />
-        <TextField
+        <div
           name="weatherOnRun"
           hintText="ex Sunny, Humid, Chilly, Rainy"
           floatingLabelText="Weather on Run"
@@ -102,7 +103,7 @@ export default class Form extends React.Component {
           floatingLabelFixed
         />
         <br />
-        <TextField
+        <div
           name="soloOrGroup"
           hintText="ex Solo"
           floatingLabelText="Solo or Group Run?"
@@ -111,7 +112,7 @@ export default class Form extends React.Component {
           floatingLabelFixed
         />
         <br />
-        <TextField
+        <div
           name="speedHillOrNormal"
           hintText="ex Speed work?"
           floatingLabelText="Speed, Hill, or Easy?"
@@ -119,9 +120,13 @@ export default class Form extends React.Component {
           onChange={e => this.change(e)}
           floatingLabelFixed
         />
+        =
         <br />
         <button onClick={e => this.onSubmit(e)}>Submit</button>
       </form>
+      </div>
     );
   }
-}
+};
+
+export default DiaryApp;
