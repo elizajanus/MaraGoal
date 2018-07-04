@@ -5,22 +5,16 @@
   "main": "server.js",
   "dependencies": {
     "axios": "^0.18.0",
-    "bcrypt-nodejs": "^0.0.3",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.3",
-    "bulma": "^0.7.1",
-    "concurrently": "^3.6.0",
-    "dotenv": "^6.0.0",
     "express": "^4.16.3",
-    "if-env": "^1.0.4",
-    "material-ui": "^0.20.1",
+    "if-env": "^1.0.4",   
     "moment": "^2.22.2",
     "mongoose": "^5.1.7",
-    "react-big-calendar": "^0.19.2",
-    "react-dom": "^16.4.1",
     "socket.io": "^2.1.1"
   },
   "devDependencies": {
-    "concurrently": "^3.5.0",
+    "concurrently": "^3.6.0",
     "nodemon": "^1.11.0"
   },
   "scripts": {

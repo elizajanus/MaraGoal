@@ -35,8 +35,11 @@ bower_components
 build/Release
 
 # Dependency directories
-node_modules/
+node_modules
 jspm_packages/
+
+# We don't use NPM in this house:
+package-lock.json
 
 # TypeScript v1 declaration files
 typings/
