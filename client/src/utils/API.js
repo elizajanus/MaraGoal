@@ -7,6 +7,7 @@ export default {
   },
 
   saveMessages: function(message) {
-    return axios.post("/api/message", message);
+    return axios.post("/api/message/", message);
   }
+
 };
