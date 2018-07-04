@@ -1,12 +1,12 @@
 const router = require("express").Router();
 const chatController = require("../../controllers/chatController");
 
-// Matches with "/api/articles"
+// Matches with "/api/messages"
 router.route("/")
   .get(chatController.findAll)
   .post(chatController.create);
 
-// Matches with "/api/articles/:id"
+// Matches with "/api/messagez/:id"
 router
   .route("/:id")
  //make a findByDate get route
