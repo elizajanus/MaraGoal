@@ -10,7 +10,7 @@ class LoginApp extends Component {
 
     loginButtonClick () {
         
-        $.post("/api/login", {
+        axios.post("/api/login", {
             email: this.state.email,
             password: this.state.password
         }).then(function(data) {
@@ -54,3 +54,5 @@ class LoginApp extends Component {
         )
     }
 }
+
+export default LoginApp;
