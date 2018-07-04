@@ -10,6 +10,7 @@ class ChatApp extends Component {
   constructor(props) {
     super(props);
     this.state = { messages: [] };
+    //HERE is where we do the get request for the message based on the API.js file
     this.sendHandler = this.sendHandler.bind(this);
     
     // Connect to the server
@@ -38,9 +39,9 @@ class ChatApp extends Component {
 
   addMessage(message) {
     // Append the message to the component state
+    //HERE is where I make the call to push the messages both to the MongoDB server and to the initial array in the state
     const messages = this.state.messages;
     messages.push(message);
-    //THIS IS WHERE WE PUSH TO MONGODB?
     this.setState({ messages });
   }
 

@@ -2,6 +2,6 @@ const router = require("express").Router();
 const chatRoutes = require("./chat");
 
 // routes
-router.use("/chat", chatRoutes);
+router.use("/messages", chatRoutes);
 
 module.exports = router;
