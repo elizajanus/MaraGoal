@@ -9,7 +9,8 @@ import Table from "./Table.js";
 class App extends Component {
 //this section is for input for the diary
   state = { 
-    fields: {}
+    fields: {},
+    data: [],
   };
 
   onChange = updatedValue => {

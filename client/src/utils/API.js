@@ -8,6 +8,14 @@ export default {
 
   saveMessage: function(message) {
     return axios.post("/api/messages", message);
+  },
+
+  getRunStats: function () {
+    return axios.post("/api/diary");
+  },
+
+  saveRunStats: function (fields) {
+    return axios.post("/api/diary", fields);
   }
 
 };

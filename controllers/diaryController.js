@@ -34,3 +34,6 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   }
 };
+
+
+//get on postman, lady! localhost 3001 

@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+//connect with user either one or multiple diarySchemas associated with array or just one...connect with Karen about users (.populate associated diaries)
 
 const diarySchema = new Schema({
   username: { type: String, default: 'MaraGoal user'},
