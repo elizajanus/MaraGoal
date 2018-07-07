@@ -2,7 +2,7 @@ import React from "react";
 import TextField from "material-ui/TextField";
 import RaisedButton from "material-ui/RaisedButton";
 
-export default class Form extends React.Component {
+class Form extends React.Component {
   state = {
         dateOfRun: "",
         dateOfRunnError: "",
@@ -171,3 +171,4 @@ export default class Form extends React.Component {
   };
 }
 
+export default Form;

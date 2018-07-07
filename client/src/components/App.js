@@ -1,76 +1,22 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import NavTabs from "./NavTabs";
 import ChatApp from './ChatApp';
 import CalendarApp from './CalendarApp';
-import Diary from "./diary/diary.js";
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Table from "./Table.js";
+import DiaryApp from './diary/DiaryApp';
 
-class App extends Component {
-//this section is for input for the diary
-  state = { 
-    fields: {}
-  };
+const App = () =>  (
+      <Router>
+    <div>
+      <NavTabs />
+      <Switch>
+      <Route exact path="/calendar" component={CalendarApp} />
+      <Route exact path="/groupchat" component={ChatApp} />
+      <Route exact path="/diary" component={DiaryApp} />
+      </Switch>
+    </div>
+  </Router>
+    );
 
-  onChange = updatedValue => {
-    this.setState({
-      fields: {
-         ...this.state.fields,
-        ...updatedValue
-      }
-    });
-  };
-
-  render() {
-    return (
-      <div>
-        <CalendarApp />
-        <ChatApp />
-        <MuiThemeProvider>
-          <div className="App">
-            <Diary onChange={fields => this.onChange(fields)} />
-            {/* <Table
-            data={this.state.data}
-            header={[
-              {
-                name: "Username",
-                prop: "username"
-              },
-              {
-                name: "Date",
-                prop: "dateOfRun"
-              },
-              {
-                name: "Time",
-                prop: "runningTime"
-              },
-              {
-                name: "Surface",
-                prop: "runningSurface"
-              },
-              {
-                name: "Injury",
-                prop: "runningInjury"
-              },
-              {
-                name: "Weather",
-                prop: "weatherOnRun"
-              },
-              {
-                name: "Solo or Group Run",
-                prop: "soloOrGroup"
-              },
-              {
-                name: "Speed, Hills, or Easy Run",
-                prop: "speedHillsOrNormal"
-              }
-            ]}
-          /> */}
-          </div>
-        </MuiThemeProvider>
-      </div>
-    )
-  }
-};
 
 export default App;
