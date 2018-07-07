@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavTabs from "./NavTabs";
 import ChatApp from './ChatApp';
 import CalendarApp from './CalendarApp';
-import DiaryApp from './diary/DiaryApp';
+import DiaryApp from "./diary/DiaryApp";
 
 const App = () =>  (
       <Router>
@@ -18,5 +18,5 @@ const App = () =>  (
   </Router>
     );
 
-
+  
 export default App;
