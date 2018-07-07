@@ -3,7 +3,8 @@ import Message from './Message';
 import API from '../utils/API';
 
 class Messages extends React.Component {
-  componentDidUpdate() {
+  componentDidUpdate() 
+      {
     this.loadMessages();
     // There is a new message in the state, scroll to bottom of list
     const objDiv = document.getElementById('messageList');
@@ -12,9 +13,10 @@ class Messages extends React.Component {
 
   loadMessages = () => {
     API.getSavedMessages()
-      .then(res =>
-        this.setState({ messages: res.data })
-      )
+      .then(res => {
+        console.log(res.data);
+        return this.setState({ messages: res.data })
+      })
       .catch(err => console.log(err));
   };
 
@@ -40,8 +42,8 @@ class Messages extends React.Component {
   }
 }
 
-/*Messages.defaultProps = {
+Messages.defaultProps = {
   messages: []
-};*/
+};
 
 export default Messages;
