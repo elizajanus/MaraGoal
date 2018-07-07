@@ -4,6 +4,7 @@ import ChatApp from './ChatApp';
 import CalendarApp from './CalendarApp';
 import Diary from "./diary/diary.js";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import SignupApp from './SignupApp';
 
 class App extends Component {
 //this section is for input for the diary
@@ -23,7 +24,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <CalendarApp />
+        <SignupApp />
+        {/* <CalendarApp />
         <ChatApp />
         <MuiThemeProvider>
           <div className="App">
@@ -32,7 +34,7 @@ class App extends Component {
               {JSON.stringify(this.state.fields, null, 2)}
             </p>
           </div>
-        </MuiThemeProvider>
+        </MuiThemeProvider> */}
       </div>
     )
   }
