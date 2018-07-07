@@ -2,7 +2,7 @@ import React from "react";
 import TextField from "material-ui/TextField";
 import RaisedButton from "material-ui/RaisedButton";
 
-export default class diary extends React.Component {
+class Form extends React.Component {
   state = {
         dateOfRun: "",
         dateOfRunnError: "",
@@ -99,7 +99,7 @@ export default class diary extends React.Component {
           floatingLabelText="Date of Run"
           value={this.state.dateOfRun}
           onChange={e => this.change(e)}
-          floatingLabelFixed //not working
+          floatingLabelFixed
         />
         <br />
         <TextField
@@ -171,3 +171,4 @@ export default class diary extends React.Component {
   };
 }
 
+export default Form;
