@@ -17,7 +17,7 @@ class ChatApp extends Component {
     
     // Connect to the server
     this.socket = io(config.api, { query: `username=${props.username}` }).connect();
-
+    
     // Listen for messages from the server
     this.socket.on('server:message', message => {
       this.addMessage(message);
@@ -57,7 +57,6 @@ class ChatApp extends Component {
 
   addMessage(message) {
     // Append the message to the component state
-    //HERE is where I make the call to push the messages both to the MongoDB server and to the initial array in the state
     const messages = this.state.messages;
     messages.push(message);
   }

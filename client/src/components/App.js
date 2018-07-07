@@ -29,7 +29,7 @@ class App extends Component {
         <MuiThemeProvider>
           <div className="App">
             <Diary onChange={fields => this.onChange(fields)} />
-            <Table
+            {/* <Table
             data={this.state.data}
             header={[
               {
@@ -65,7 +65,7 @@ class App extends Component {
                 prop: "speedHillsOrNormal"
               }
             ]}
-          />
+          /> */}
           </div>
         </MuiThemeProvider>
       </div>
