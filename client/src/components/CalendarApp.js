@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import "../styles/CalendarApp.css";
-import { Sunday, Saturday } from './events';
+import { events } from './events';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
@@ -26,13 +26,13 @@ class CalendarApp extends Component {
       <div>
         <button onClick={() => this.changeDay("Saturday")}>Saturday</button>
         <button onClick={() => this.changeDay("Sunday")}>Sunday</button>
-        <BigCalendar
+       {/*} <BigCalendar
           events={this.state.selectedDay === "Saturday" ? Saturday : Sunday}
           views={allViews}
           step={60}
           showMultiDayTimes
           defaultDate={new Date(2018, 5, 1)}
-        />  
+    />  */}
       </div>
     )
   }

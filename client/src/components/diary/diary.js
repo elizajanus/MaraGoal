@@ -2,7 +2,7 @@ import React from "react";
 import TextField from "material-ui/TextField";
 import RaisedButton from "material-ui/RaisedButton";
 
-export default class Form extends React.Component {
+class Form extends React.Component {
   state = {
         dateOfRun: "",
         dateOfRunnError: "",
@@ -58,6 +58,7 @@ export default class Form extends React.Component {
     e.preventDefault();
     // this.props.onSubmit(this.state);
     this.setState({
+      username: "", //how do we get this to stay as the username the entire time without them having to rewrite it for each post?
       dateOfRun: "",
       runningTime: "",
       runningSurface: "",
@@ -68,6 +69,7 @@ export default class Form extends React.Component {
 
     });
     this.props.onChange({
+        username: "",
         dateOfRun: "",
         runningTime: "",
         runningDistance: "",
@@ -82,6 +84,15 @@ export default class Form extends React.Component {
   render() {
     return (
       <form>
+        <TextField
+          name="username"
+          hintText="RunRVALady"
+          floatingLabelText="username"
+          value={this.state.username}
+          onChange={e => this.change(e)}
+          floatingLabelFixed
+        />
+        <br />
         <TextField
           name="dateofRun"
           hintText="ex 10/10/2018"
@@ -160,3 +171,4 @@ export default class Form extends React.Component {
   };
 }
 
+export default Form;

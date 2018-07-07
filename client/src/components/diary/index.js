@@ -1,1 +1,1 @@
-export {default} from "/.diary";
+export {DiaryApp} from "/.diary";
