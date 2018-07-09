@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from "axios";
 
 
 class LoginApp extends Component {
@@ -39,11 +40,11 @@ class LoginApp extends Component {
                                     <label for="exampleInputEmail1">Email address</label>
                                     <input onChange={(e) => this.setState({email: e.value})} type="email" className="form-control" id="email-input" placeholder="Email"></input>
                                 </div>
-                            <div className="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input onChange={(e) => this.setState({password: e.value})} type="password" className="form-control" id="password-input" placeholder="Password"></input>
-                            </div>
-                            <button onClick={() => this.loginButtonClick} type="submit" className="btn btn-default">Login</button>
+                                <div className="form-group">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input onChange={(e) => this.setState({password: e.value})} type="password" className="form-control" id="password-input" placeholder="Password"></input>
+                                </div>
+                                <button onClick={() => this.loginButtonClick} type="submit" className="btn btn-default">Login</button>
                             </form>
                         <br />
                         <p>Or sign up <a href="/">here</a></p>
