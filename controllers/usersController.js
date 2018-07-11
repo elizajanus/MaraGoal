@@ -1,4 +1,5 @@
 var passport = require("../config/passport");
+
 var db = require("../models/");
 module.exports = {
     // Using the passport.authenticate middleware with our local strategy.
