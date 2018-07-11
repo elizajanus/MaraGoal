@@ -6,7 +6,7 @@ const usersController = require('../../controllers/usersController');
 router.post('/signup', usersController.signUp);
 router.post('/login', passport.authenticate('local'), (req, res) => {
     console.log('in login action');
-    res.json({ redirect: '/dashboard' });
+    res.json({ redirect: '/' });
 });
 
 
