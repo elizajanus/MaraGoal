@@ -5,7 +5,7 @@ import axios from "axios";
 class LoginApp extends Component {
 
     state = {
-        email: "",
+        username: "",
         password: ""
     }
 
@@ -13,10 +13,10 @@ class LoginApp extends Component {
         
         axios.post("/api/users/login", {
             username: this.state.username,
-            email: this.state.email,
+            // email: this.state.email,
             password: this.state.password
         }).then(function(data) {
-            window.location.replace(data);
+            // window.location.replace();
             // If there's an error, log the error
         }).catch(function(err) {
             console.log(err);
@@ -27,9 +27,9 @@ class LoginApp extends Component {
         this.setState({username: e.target.value});
     }
 
-    handleEmail = (e)=> {
-        this.setState({email: e.target.value})
-    }
+    // handleEmail = (e)=> {
+    //     this.setState({email: e.target.value})
+    // }
 
     handlePassword = (e)=> {
         this.setState({password: e.target.value})
@@ -39,6 +39,18 @@ class LoginApp extends Component {
     render () {
         return (
             <div>
+                <ul className="nav nav-tabs">
+            <li className="nav-item">
+            <Link
+                to="/login"
+                // className={
+                //     window.location.pathname === "/signup" ? "nav-link active" : "nav-link"
+                // }
+            >
+                Login
+            </Link>
+        </li>
+        </ul>
                 <nav className="navbar navbar-default">
                     <div className="container-fluid">
                         <div className="navbar-header">
@@ -60,7 +72,7 @@ class LoginApp extends Component {
                                         id="user-input" 
                                         placeholder="User" />
                                 </div>
-                                <div className="form-group">
+                                {/* <div className="form-group">
                                     <label for="exampleInputEmail1">Email address</label>
                                     <input 
                                         value={this.state.email}
@@ -69,7 +81,7 @@ class LoginApp extends Component {
                                         className="form-control" 
                                         id="email-input" 
                                         placeholder="Email" />
-                                </div>
+                                </div> */}
                             <div className="form-group">
                                 <label for="exampleInputPassword1">Password</label>
                                 <input 
@@ -84,7 +96,11 @@ class LoginApp extends Component {
 
                             </form>
                         <br />
-                        <p>Or sign up <a href="/">here</a></p>
+                        <p>Already signed up? Login here.</p>
+                                <Link 
+                                    to={"/signup"}>
+                                    Signup
+                                </Link>
                         </div>
                     </div>
                 </div>
