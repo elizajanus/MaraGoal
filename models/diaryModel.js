@@ -3,15 +3,14 @@ const Schema = mongoose.Schema;
 //connect with user either one or multiple diarySchemas associated with array or just one...connect with Karen about users (.populate associated diaries)
 
 const diarySchema = new Schema({
-  username: { type: String, default: 'MaraGoal user'},
-  date: { type: Date, default: Date.now, required: true, },
-  pace: { type: String, default: false, required: true,},
-  distance: { type: String, default: false, required: true,},
-  surface: { type: String, default: false, required: true,},
-  injuries: { type: String, default: false, required: true,},
-  weather: { type: String, default: false, required: true,},
+  dateOfRun: { type: Date, default: Date.now, required: true, },
+  runningTime: { type: String, default: false, required: true,},
+  runningDistance: { type: String, default: false, required: true,},
+  runningSurface: { type: String, default: false, required: true,},
+  runningInjury: { type: String, default: false, required: true,},
+  weatherOnRun: { type: String, default: false, required: true,},
   soloOrGroup: { type: String, default: false, required: true,},
-  speedHillorEasy: { type: String, default: false, required: true,}
+  speedHillsOrNormal: { type: String, default: false, required: true,}
 
 });
 

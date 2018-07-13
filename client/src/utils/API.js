@@ -11,7 +11,7 @@ export default {
   },
 
   getRunStats: function () {
-    return axios.post("/api/diary");
+    return axios.get("/api/diary");
   },
 
   saveRunStats: function (fields) {
