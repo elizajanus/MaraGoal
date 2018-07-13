@@ -15,7 +15,7 @@ class CalendarApp extends Component {
     selectedDay: "Saturday"
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.setState({
       selectedDay: sessionStorage['selectedDay'] || 'Saturday',
     });
