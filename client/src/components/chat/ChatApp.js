@@ -8,15 +8,15 @@ import API from '../../utils/API';
 
 class ChatApp extends Component {
   socket = {};
-  constructor(props) {
-    super(props);
-    this.state = { messages: [] };
-    this.loadMessages();
+  state = {
+    username: 'MaraGoal user 1',
+    messages: [],
+  };
 
-    this.sendHandler = this.sendHandler.bind(this);
-    
+  componentWillMount() {
+    this.loadMessages();
     // Connect to the server
-    this.socket = io(config.api, { query: `username=${props.username}` }).connect();
+    this.socket = io(config.api, { query: `username=${this.props.username}` }).connect();
     
     // Listen for messages from the server
     this.socket.on('server:message', message => {
@@ -24,13 +24,11 @@ class ChatApp extends Component {
     });
   }
 
-  sendHandler(message) {
-    /*const messageObject = {
+  sendHandler = (message) => {
+    const messageObject = {
       username: this.props.username,
-      message: message,
-      date: this.date,
-      fromMe: this.fromMe
-    };*/
+      message: message
+    };
 
 //console.log(messageObject);
     // Emit the message to the server
@@ -39,10 +37,8 @@ class ChatApp extends Component {
 
    // messageObject.fromMe = true;
     //this.addMessage(messageObject);
-    console.log(message)
-    API.saveMessage({
-      message
-    })
+    console.log(messageObject)
+    API.saveMessage(messageObject)
       .then(res => this.loadMessages())
       .catch(err => console.log(err));
   }
@@ -57,8 +53,8 @@ class ChatApp extends Component {
 
   addMessage(message) {
     // Append the message to the component state
-    const messages = this.state.messages;
-    messages.push(message);
+    const messages = [...this.state.messages, message];
+    this.setState({ messages });
   }
 
   render() {
@@ -66,7 +62,7 @@ class ChatApp extends Component {
               <div className="container">
                 <h3>MaraGoal Groupchat</h3>
                   <div className="column">
-                    <Messages messages={this.state.messages} />
+                    <Messages username={this.state.username} messages={this.state.messages} />
                     <ChatInput onSend={this.sendHandler} />
                   </div>
               </div>

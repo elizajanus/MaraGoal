@@ -3,20 +3,26 @@ import Message from './Message';
 import API from '../../utils/API';
 
 class Messages extends React.Component {
-  componentDidUpdate() {
-    this.loadMessages();
-    // There is a new message in the state, scroll to bottom of list
-    const objDiv = document.getElementById('messageList');
-    objDiv.scrollTop = objDiv.scrollHeight;
+  constructor(props) {
+    super(props);
+    this.messageList = React.createRef();
   }
 
-  loadMessages = () => {
-    API.getSavedMessages()
-      .then(res =>
-        this.setState({ messages: res.data })
-      )
-      .catch(err => console.log(err));
-  };
+  componentDidUpdate() {
+    const messageList = this.messageList.current;
+
+    // There is a new message in the state, scroll to bottom of list
+    console.log('messageList: %O', messageList);
+    messageList.scrollTop = messageList.scrollHeight;
+  }
+
+  // loadMessages = () => {
+  //   API.getSavedMessages()
+  //     .then(res =>
+  //       this.setState({ messages: res.data })
+  //     )
+  //     .catch(err => console.log(err));
+  // };
 
   render() {
     // Loop through all the messages in the state and create a Message component
@@ -33,7 +39,7 @@ class Messages extends React.Component {
       });
    
     return (
-      <div className='messages' id='messageList'>
+      <div className='messages' id='messageList' ref={this.messageList}>
         { messages }
       </div>
     );
