@@ -1,21 +1,25 @@
 import React, { Component } from 'react';
 import axios from "axios";
-
+import { Link } from "react-router-dom";
 
 class LoginApp extends Component {
 
     state = {
         username: "",
-        password: ""
+        password: "",
+        selectedDay: ""
     }
 
     loginButtonClick () {
         
         axios.post("/api/users/login", {
             username: this.state.username,
-            // email: this.state.email,
+            selectedDay: this.state.selectedDay,
             password: this.state.password
         }).then(function(data) {
+            sessionStorage["username"] = data.data.username;
+            sessionStorage["selectedDay"] = data.data.selectedDay;
+            console.log(sessionStorage["username"]);
             // window.location.replace();
             // If there's an error, log the error
         }).catch(function(err) {
