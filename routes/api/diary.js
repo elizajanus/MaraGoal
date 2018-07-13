@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const articleController = require("../../controllers/diaryController");
+const diaryController = require("../../controllers/diaryController");
 
 // Matches with "/api/diary"
 router.route("/")
@@ -9,7 +9,7 @@ router.route("/")
 // Matches with "/api/diary/:id"
 router
   .route("/:id")
-  .get(diaryController.findById)
+  // .get(diaryController.findById)
   .put(diaryController.update)
   .delete(diaryController.remove);
 

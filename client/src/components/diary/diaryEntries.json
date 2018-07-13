@@ -1,0 +1,114 @@
+[
+    {
+        "username" : "koeaves",
+        "dateOfRun" : "6/30/2018",
+        "runningTime" : "10:30",
+        "runningDistance": "4 mi",
+        "runningSurface" : "road",
+        "runningInjury": "none",
+        "weatherOnRun": "humid",
+        "soloOrGroup": "solo",
+        "speedHillsOrNormal": "hill"
+    }, 
+    {
+        "username" : "koeaves",
+        "dateOfRun" : "7/1/2018",
+        "runningTime" : "10:00",
+        "runningDistance": "6 mi",
+        "runningSurface" : "road",
+        "runningInjury": "none",
+        "weatherOnRun": "cloudy",
+        "soloOrGroup": "group",
+        "speedHillsOrNormal": "normal"
+    }, 
+    {
+        "username" : "koeaves",
+        "dateOfRun" : "7/3/2018",
+        "runningTime" : "10:15",
+        "runningDistance": "4 mi",
+        "runningSurface" : "trail",
+        "runningInjury": "back",
+        "weatherOnRun": "cool",
+        "soloOrGroup": "solo",
+        "speedHillsOrNormal": "normal"
+    }, 
+    {
+        "username" : "koeaves",
+        "dateOfRun" : "7/7/2018",
+        "runningTime" : "9:00",
+        "runningDistance": "5 mi",
+        "runningSurface" : "treadmill",
+        "runningInjury": "none",
+        "weatherOnRun": "AC-n/a",
+        "soloOrGroup": "solo",
+        "speedHillsOrNormal": "speed"
+    }, 
+    {
+        "username" : "koeaves",
+        "dateOfRun" : "7/8/2018",
+        "runningTime" : "9:57",
+        "runningDistance": "7 mi",
+        "runningSurface" : "road",
+        "runningInjury": "none",
+        "weatherOnRun": "sunny",
+        "soloOrGroup": "group",
+        "speedHillsOrNormal": "normal"
+    }, 
+    {
+        "username" : "wamponsah",
+        "dateOfRun" : "6/29/2018",
+        "runningTime" : "11:00",
+        "runningDistance": "2",
+        "runningSurface" : "treadmill",
+        "runningInjury": "none",
+        "weatherOnRun": "n/a",
+        "soloOrGroup": "solo",
+        "speedHillsOrNormal": "normal"
+    }, 
+    {
+        "username" : "wamponsah",
+        "dateOfRun" : "7/1/2018",
+        "runningTime" : "10:50",
+        "runningDistance": "2.35",
+        "runningSurface" : "treadmill",
+        "runningInjury": "none",
+        "weatherOnRun": "n/a",
+        "soloOrGroup": "solo",
+        "speedHillsOrNormal": "normal"
+    }, 
+    {
+        "username" : "wamponsah",
+        "dateOfRun" : "7/3/2018",
+        "runningTime" : "10:44",
+        "runningDistance": "3.1",
+        "runningSurface" : "trail",
+        "runningInjury": "none",
+        "weatherOnRun": "cool",
+        "soloOrGroup": "solo",
+        "speedHillsOrNormal": "speed"
+    }, 
+    {
+        "username" : "wamponsah",
+        "dateOfRun" : "7/7/2018",
+        "runningTime" : "10:40",
+        "runningDistance": "3.1",
+        "runningSurface" : "trail",
+        "runningInjury": "none",
+        "weatherOnRun": "breezy",
+        "soloOrGroup": "solo",
+        "speedHillsOrNormal": "speed"
+    }, 
+    {
+        "username" : "wamponsah",
+        "dateOfRun" : "7/10/2018",
+        "runningTime" : "11:00",
+        "runningDistance": "2.5",
+        "runningSurface" : "road",
+        "runningInjury": "none",
+        "weatherOnRun": "sunny",
+        "soloOrGroup": "solo",
+        "speedHillsOrNormal": "hills"
+    }
+
+]
+

@@ -1,6 +1,7 @@
 const db = require("../models");
 
 // Defining methods for the diaryController
+//how to connect to user....Karen?
 module.exports = {
   findAll: function(req, res) {
     db.Diary
@@ -10,10 +11,16 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
-    const article = {
-      _id: req.body._id,
-      title: req.body.headline.main,
-      url: req.body.web_url
+    console.log(req.body)
+    const diary = {
+      dateOfRun: req.body.dateOfRun,
+      runningTime: req.body.runningTime,
+      runningDistance: req.body.runningDistance,
+      runningSurface: req.body.runningSurface,
+      runningInjury: req.body.runningInjury,
+      weatherOnRun: req.body.weatherOnRun,
+      soloOrGroup: req.body.soloOrGroup,
+      speedHillsOrNormal: req.body.speedHillsOrNormal
     };
     db.Diary
       .create(diary)
