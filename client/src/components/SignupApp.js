@@ -61,14 +61,14 @@ class SignupApp extends Component {
                                     <h2>Signup Form</h2>
                                     {/* <form className="login"> */}
                                         <div className="form-group">
-                                            <label>username</label>
+                                            <label>Username</label>
                                             <input
-                                            value={this.state.email}
+                                            value={this.state.username}
                                             onChange={this.handleUser}
-                                            type="email" 
+                                            type="username" 
                                             className="form-control" 
-                                            id="email-input" 
-                                            placeholder="Email" />
+                                            id="user-input" 
+                                            placeholder="User" />
                                         </div>
                                         <div className="form-group">
                                             <label>Email address</label>
@@ -83,7 +83,7 @@ class SignupApp extends Component {
                                     <div className="form-group">
                                         <label>Password</label>
                                         <input 
-                                            value={this.state.email} 
+                                            value={this.state.password} 
                                             onChange={this.handlePassword} 
                                             type="password" 
                                             className="form-control" 

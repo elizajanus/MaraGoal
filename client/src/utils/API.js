@@ -16,14 +16,6 @@ export default {
 
   saveRunStats: function (fields) {
     return axios.post("/api/diary", fields);
-  },
-  
-  getDailyEvents: function() {
-    return axios.get("/api/events");
-  },
-
-  saveRunAsDone: function(event) {
-    return axios.post("/api/events", event);
   }
 
 };

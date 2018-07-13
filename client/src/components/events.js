@@ -1,4 +1,4 @@
-const events = [
+const Saturday = [
   {
     title: 'Rest',
     start: new Date(2018, 5, 4),
@@ -964,7 +964,10 @@ const events = [
     start: new Date(2018, 10, 11),
     end: new Date(2018, 10, 11),
     desc: 'Saturday'
-  },
+  }
+];
+
+const Sunday = [
   {
     title: 'Rest',
     start: new Date(2018, 5, 4),
@@ -1934,5 +1937,5 @@ const events = [
 ];
 
 export {
-  events
+  Saturday, Sunday
 };

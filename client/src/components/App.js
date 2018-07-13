@@ -4,19 +4,21 @@ import NavTabs from "./NavTabs";
 import ChatApp from './ChatApp';
 import CalendarApp from './CalendarApp';
 import DiaryApp from "./diary/DiaryApp";
+import SignupApp from './SignupApp';
 
 const App = () =>  (
-      <Router>
-    <div>
-      <NavTabs />
-      <Switch>
-      <Route exact path="/calendar" component={CalendarApp} />
-      <Route exact path="/groupchat" component={ChatApp} />
-      <Route exact path="/diary" component={DiaryApp} />
-      </Switch>
-    </div>
+    <Router>
+        <div>
+            <SignupApp />
+            <NavTabs />
+            <Switch>
+                <Route exact path="/calendar" component={CalendarApp} />
+                <Route exact path="/groupchat" component={ChatApp} />
+                <Route exact path="/diary" component={DiaryApp} />
+            </Switch>
+        </div>
   </Router>
-    );
+);
 
   
 export default App;
