@@ -1,6 +1,6 @@
 import React from 'react';
 import Message from './Message';
-import API from '../utils/API';
+import API from '../../utils/API';
 
 class Messages extends React.Component {
   componentDidUpdate() {

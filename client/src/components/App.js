@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavTabs from "./NavTabs";
-import ChatApp from './ChatApp';
+import ChatApp from './chat/ChatApp';
 import CalendarApp from './calendar/CalendarApp';
 import DiaryApp from "./diary/DiaryApp";
 import SignupApp from './SignupApp';
