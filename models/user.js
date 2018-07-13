@@ -31,7 +31,14 @@ var UserSchema = new Schema({
 
   selectedDay: {
     type: String
-  }
+  },
+
+  diaries: [
+    {
+    type: Schema.Types.ObjectId,
+    ref: "Diary"
+    }
+  ]
 });
 
 UserSchema.methods.validPassword = function(password) {
