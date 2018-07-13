@@ -35,9 +35,9 @@ class SignupApp extends Component {
         }).catch(err => console.log(err));
     }
 
-    loginButtonClick = () => {
-        window.location.replace('/login');
-    }
+    // loginButtonClick = () => {
+    //     window.location.replace('/login');
+    // }
 
     handleUser = (e)=> {
         this.setState({username: e.target.value});
@@ -65,9 +65,9 @@ class SignupApp extends Component {
         <li className="nav-item">
             <Link
                 to="/signup"
-                className={
-                    window.location.pathname === "/signup" ? "nav-link active" : "nav-link"
-                }
+                // className={
+                //     window.location.pathname === "/signup" ? "nav-link active" : "nav-link"
+                // }
             >
                 Signup
             </Link>
@@ -138,7 +138,10 @@ class SignupApp extends Component {
                                     {/* </form> */}
                                 <br />
                                 <p>Already signed up? Login here.</p>
-                                <button onClick={this.loginButtonClick} className="btn btn-default">Login</button>
+                                <Link 
+                                to={"/login"}>
+                                Login
+                                </Link>
                                 </div>
                                 {/* {user.day === "saturday" ?
                                     (div) :
