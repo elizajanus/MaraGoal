@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import { Link } from "react-router-dom";
+
+// import LoginApp from "./LoginApp";
 // import { Link } from "react-router-dom";
 // import API from "../../utils/API";
 
@@ -22,11 +25,19 @@ class SignupApp extends Component {
             selectedDay: this.state.selectedDay
         }).then(function(data) {
             console.log(data.data);
-            let baseurl = "/users/";
+            sessionStorage["username"] = data.data.username;
+            sessionStorage["selectedDay"] = data.data.selectedDay;
+            console.log(sessionStorage["username"]);
+            
+            
             // window.location.replace(data);
             // If there's an error, handle it by throwing up a bootstrap alert
         }).catch(err => console.log(err));
     }
+
+    // loginButtonClick = () => {
+    //     window.location.replace('/login');
+    // }
 
     handleUser = (e)=> {
         this.setState({username: e.target.value});
@@ -45,9 +56,23 @@ class SignupApp extends Component {
             selectedDay: changeEvent.target.value
         });   
     }
+
     
     render () {
         return (
+        <div>
+        <ul className="nav nav-tabs">
+        <li className="nav-item">
+            <Link
+                to="/signup"
+                // className={
+                //     window.location.pathname === "/signup" ? "nav-link active" : "nav-link"
+                // }
+            >
+                Signup
+            </Link>
+        </li>
+        </ul>
             <div>
                 <nav className="navbar navbar-default">
                     <div className="container-fluid">
@@ -112,7 +137,11 @@ class SignupApp extends Component {
                                     <button onClick={this.submitButtonClick} className="btn btn-default">Signup</button>
                                     {/* </form> */}
                                 <br />
-                                <p>Or log in <a href="/">here</a></p>
+                                <p>Already signed up? Login here.</p>
+                                <Link 
+                                to={"/login"}>
+                                Login
+                                </Link>
                                 </div>
                                 {/* {user.day === "saturday" ?
                                     (div) :
@@ -121,6 +150,7 @@ class SignupApp extends Component {
                             </div>
                         </div>
             </div>
+    </div>
         )
     }
 }
