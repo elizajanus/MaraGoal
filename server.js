@@ -5,6 +5,8 @@ const routes = require("./routes");
 const passport = require('./config/passport');
 const session = require('express-session');
 const app = express();
+const server = require('http').createServer(app);
+const io = require('socket.io')(server);
 const PORT = process.env.PORT || 3001;
 
 app.use(function (req, res, next) {
@@ -40,6 +42,6 @@ app.use(routes);
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/maragoal");
 
 // Start the API server
-app.listen(PORT, function() {
+server.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
