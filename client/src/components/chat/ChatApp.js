@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import '../styles/ChatApp.css';
+import './ChatApp.css';
 import io from 'socket.io-client';
 import Messages from './Messages';
 import ChatInput from './ChatInput';
-import config from '../config';
-import API from '../utils/API';
+import config from '../../config';
+import API from '../../utils/API';
 
 class ChatApp extends Component {
   socket = {};
