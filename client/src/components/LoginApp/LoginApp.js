@@ -10,16 +10,24 @@ class LoginApp extends Component {
         selectedDay: ""
     }
 
-    loginButtonClick () {
-        
+    handleButton () {
+        console.log(this.state.username);
+        console.log(this.state.password);
+    }
+    
+    loginButtonClick = (e) => {
+        e.preventDefault();
         axios.post("/api/users/login", {
+           
             username: this.state.username,
-            selectedDay: this.state.selectedDay,
+            // selectedDay: this.state.selectedDay,
             password: this.state.password
+            
         }).then(function(data) {
+            console.log(data)
             sessionStorage["username"] = data.data.username;
             sessionStorage["selectedDay"] = data.data.selectedDay;
-            console.log(sessionStorage["username"]);
+            console.log("session storGE!!!!!!!!!!: " + sessionStorage["username"]);
             // window.location.replace();
             // If there's an error, log the error
         }).catch(function(err) {
@@ -67,7 +75,7 @@ class LoginApp extends Component {
                             <h2>Login Form</h2>
                             <form className="login">
                             <div className="form-group">
-                                    <label for="exampleInputUser1">Username</label>
+                                    <label htmlFor="exampleInputUser1">Username</label>
                                     <input 
                                         value={this.state.username}
                                         onChange={this.handleUser} 
@@ -87,7 +95,7 @@ class LoginApp extends Component {
                                         placeholder="Email" />
                                 </div> */}
                             <div className="form-group">
-                                <label for="exampleInputPassword1">Password</label>
+                                <label htmlFor="exampleInputPassword1">Password</label>
                                 <input 
                                     value={this.state.password}
                                     onChange={this.handlePassword} 
@@ -96,7 +104,8 @@ class LoginApp extends Component {
                                     id="password-input" 
                                     placeholder="Password" />
                             </div>
-                            <button onClick={() => this.loginButtonClick} type="submit" className="btn btn-default">Login</button>
+                            <button onClick={() => this.handleButton} type="submit" className="btn ben-default">Test</button>
+                            <button onClick={this.loginButtonClick} type="submit" className="btn btn-default">Login</button>
 
                             </form>
                         <br />

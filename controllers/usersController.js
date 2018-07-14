@@ -32,6 +32,28 @@ module.exports = {
       console.log("hmmm");
     },
   
+    logIn: function(req, res) {
+
+      console.log("login!!!");
+
+      // if (!req.user) {
+      //   // The user is not logged in, send back an empty object
+      //   console.log("login didn't work");
+      //   res.json({});
+      //   }
+      // console.log(req.body._id);
+
+      db.User.findById(req.body._id)
+      .then(foundUser => {
+        
+        res.json(foundUser);
+      }).catch(err => {
+        console.log("err: " + err);
+        res.json(err);
+        // res.status(422).json(err.errors[0].message);
+      });
+      console.log("hmmm");
+    },
     // Route for logging user out
     logout: function(req, res) {
       req.logout();
@@ -39,21 +61,21 @@ module.exports = {
     },
   
     // Route for getting some data about our user to be used client side
-    getUser: function(req, res) {
-      if (!req.user) {
-        // The user is not logged in, send back an empty object
-        res.json({});
-      }
-      else {
-        // Otherwise send back the user's email and id
-        // Sending back a password, even a hashed password, isn't a good idea
-        res.json({
-          username: req.user.username,
-          email: req.user.email,
-          id: req.user.id,
-          selectedDay: req.user.selectedDay
-        });
-      }
-    },
+    // getUser: function(req, res) {
+    //   if (!req.user) {
+    //     // The user is not logged in, send back an empty object
+    //     res.json({});
+    //   }
+    //   else {
+    //     // Otherwise send back the user's email and id
+    //     // Sending back a password, even a hashed password, isn't a good idea
+    //     res.json({
+    //       username: req.user.username,
+    //       email: req.user.email,
+    //       id: req.user.id,
+    //       selectedDay: req.user.selectedDay
+    //     });
+    //   }
+    // },
   
   };
