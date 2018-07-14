@@ -5,32 +5,20 @@ import Messages from './Messages';
 import ChatInput from './ChatInput';
 import config from '../../config';
 import API from '../../utils/API';
-import axios from "axios";
-
-/*axios.get("api/users/login", {
-  
-}).then(function(data) {
-  console.log(data);
-  sessionStorage["username"] = data.data.username;
-  console.log(sessionStorage["username"]);
-  // window.location.replace();
-  // If there's an error, log the error
-}).catch(function(err) {
-  console.log(err);
-});      */
 
 class ChatApp extends Component {
   socket = {};
   
   state = {
-    username: this.props.username,
+    username: sessionStorage['username'],
     messages: []
   };
 
   componentWillMount() {
+    console.log(sessionStorage['username']);
     this.loadMessages();
     // Connect to the server
-    this.socket = io(config.api, { query: `username=${this.props.username}` }).connect();
+    this.socket = io(config.api, { query: `username=${this.state.username}` }).connect();
     
     // Listen for messages from the server
     this.socket.on('server:message', message => {
