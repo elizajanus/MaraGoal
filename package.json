@@ -4,18 +4,22 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^5.1.0",
     "axios": "^0.18.0",
     "bcrypt-nodejs": "0.0.3",
+    "bloomer": "^0.6.3",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
+    "font-awesome": "^4.7.0",
     "if-env": "^1.0.4",
     "moment": "^2.22.2",
     "mongoose": "^5.1.7",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "react-router-dom": "^4.3.1",
     "react": "^16.4.1",
+    "react-fontawesome": "^1.6.1",
+    "react-router-dom": "^4.3.1",
     "socket.io": "^2.1.1"
   },
   "devDependencies": {

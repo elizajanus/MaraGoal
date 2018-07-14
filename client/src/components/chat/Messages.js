@@ -18,13 +18,6 @@ class Messages extends React.Component {
 
   }
 
-  // loadMessages = () => {
-  //   API.getSavedMessages()
-  //     .then(res =>
-  //       this.setState({ messages: res.data })
-  //     )
-  //     .catch(err => console.log(err));
-  // };
 
   render() {
     // Loop through all the messages in the state and create a Message component
@@ -48,8 +41,5 @@ class Messages extends React.Component {
   }
 }
 
-/*Messages.defaultProps = {
-  messages: []
-};*/
 
 export default Messages;
