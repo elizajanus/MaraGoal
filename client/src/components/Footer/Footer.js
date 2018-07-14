@@ -34,8 +34,8 @@ import {
     TabLink,
     Title
 } from 'bloomer';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { fagithub } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fontawesome/react-fontawesome';
+import { fagithub } from '@fontawesome/free-solid-svg-icons';
 import Bulma from 'bulma'
 
 const Footer = () => (
