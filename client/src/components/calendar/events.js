@@ -1,4 +1,4 @@
-const Saturday = [
+const saturday = [
   {
     title: 'Rest',
     start: new Date(2018, 5, 4),
@@ -967,7 +967,7 @@ const Saturday = [
   }
 ];
 
-const Sunday = [
+const sunday = [
   {
     title: 'Rest',
     start: new Date(2018, 5, 4),
@@ -1937,5 +1937,5 @@ const Sunday = [
 ];
 
 export {
-  Saturday, Sunday
+  saturday, sunday
 };
