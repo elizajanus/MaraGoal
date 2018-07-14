@@ -43,7 +43,7 @@ const Header = () => (
 < Navbar className = 'has-background-black'>
 <NavbarBrand>
     <NavbarItem href="/SignupApp">
-        <img src={brand} style={{ marginRight: 5 }} /> MaryGoal
+        <img src={brand} style={{ marginRight: 5 }} /> MaraGoal
     </NavbarItem>
     <NavbarItem isHidden='desktop'>
         <Icon className='fa fa-github' />
