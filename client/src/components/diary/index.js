@@ -1,1 +1,1 @@
-export {DiaryApp} from "/.diary";
+export {DiaryApp} from "./diary";
