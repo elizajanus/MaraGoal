@@ -3,3 +3,16 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+.bg-img {
+  background-image: url(/images/done.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.name {
+  font-size: 70pt;
+  
+}

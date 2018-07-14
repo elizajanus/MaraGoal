@@ -5,17 +5,28 @@ import ChatApp from './chat/ChatApp';
 import CalendarApp from './calendar/CalendarApp';
 import DiaryApp from "./diary/DiaryApp";
 import SignupApp from './SignupApp';
+import 'font-awesome/css/font-awesome.css';
+import Header from "./Header/Header";
+import HeroApp from "./Hero/HeroApp";
+import Footer from "./Footer/Footer";
+import Bulma from 'bulma';
+import '../index.css';
+
+
+
 
 const App = () =>  (
     <Router>
-        <div>
-            <SignupApp />
-            <NavTabs />
+        < div className = "bg-img" > 
+            <Header />  
+            
             <Switch>
+                <Route exact path="/SignupApp" component={SignupApp} />
                 <Route exact path="/calendar" component={CalendarApp} />
                 <Route exact path="/groupchat" component={ChatApp} />
                 <Route exact path="/diary" component={DiaryApp} />
             </Switch>
+            <Footer />
         </div>
   </Router>
 );
