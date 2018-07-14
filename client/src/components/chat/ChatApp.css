@@ -36,7 +36,7 @@ h3 {
   
 }*/
 
-.message.from-me {
+/*.message.from-me {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 5px;
@@ -49,7 +49,7 @@ h3 {
 .message.from-other .message-body {
   background-color:  #5cd65c;
   color: white;
-}
+}*/
 .message {
   margin-bottom: 20px;
 }
@@ -60,6 +60,7 @@ h3 {
   border: 1px;
   border-radius: 5px;
   padding-right: 50px;
+  overflow-wrap: break-word;
 }
 
 .username {

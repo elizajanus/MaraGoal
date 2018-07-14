@@ -12,7 +12,8 @@ module.exports = {
   },
   create: function(req, res) {
     console.log(req.body)
-    const diary = {
+    let diary = {
+      username: req.body.username,
       dateOfRun: req.body.dateOfRun,
       runningTime: req.body.runningTime,
       runningDistance: req.body.runningDistance,

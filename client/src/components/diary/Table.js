@@ -2,6 +2,7 @@ import React from "react";
 import data from './diaryEntries.json';
 import diary from "./diary.js";
 import axios from 'axios';
+import LoginApp from "../LoginApp/LoginApp.js";
  
 import {
   Table,
@@ -12,15 +13,33 @@ import {
   TableRowColumn
 } from "material-ui/Table";
 
-//import data from where?  how do I do getposts to do this? get json from mlab?
+// db.User.find({SessionStorage(username)}).populate("diaryEntries").then(function(dbUser) {req.json(dbUser)
 
 class DiaryTable extends React.Component {
   state = {
-    diaryEntries: data,
-    user: {username: 'koeaves'}
+    diaryEntries: [],
+    username: [],
   }
-  //store the user in the state in some part of the app and then pass taht user down through props to 
-//did mount request to get and populate all of the diary entries with that user...get up get route on backend
+
+  
+
+  // componentDidMount() {
+  //   this.setState({
+  //     username: sessionStorage['username'],
+  //   });
+  //   axios.get('/api/diary', {params: {username}}) 
+  //  .then(res => {
+  //    console.log(res);
+  //    console.log(res.data);
+  //    username.setState({e : response.data});
+     
+  //    })
+  // };
+    // get username or unique ID from session storage
+    // Make AJAX request to  server to load diary entries belonging to that user
+    // In the request's "then" handler, update the state's diaryEntries property with the data returned
+  
+
   render() {
     return (
       <Table>
