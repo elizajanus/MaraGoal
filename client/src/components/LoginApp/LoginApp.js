@@ -67,7 +67,7 @@ class LoginApp extends Component {
                             <h2>Login Form</h2>
                             <form className="login">
                             <div className="form-group">
-                                    <label for="exampleInputUser1">Username</label>
+                                    <label htmlFor="exampleInputUser1">Username</label>
                                     <input 
                                         value={this.state.username}
                                         onChange={this.handleUser} 
@@ -87,7 +87,7 @@ class LoginApp extends Component {
                                         placeholder="Email" />
                                 </div> */}
                             <div className="form-group">
-                                <label for="exampleInputPassword1">Password</label>
+                                <label htmlFor="exampleInputPassword1">Password</label>
                                 <input 
                                     value={this.state.password}
                                     onChange={this.handlePassword} 
