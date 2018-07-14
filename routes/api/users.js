@@ -2,12 +2,13 @@
 const passport = require('../../config/passport');
 const router = require("express").Router();
 const usersController = require('../../controllers/usersController');
-
-router.post('/signup', usersController.signUp);
-router.post('/login', passport.authenticate('local'), (req, res) => {
+router.post('/login', 
+// console.log(router.trace);
+    passport.authenticate('local'), (req, res) => {
     console.log('in login action');
-    res.json({ redirect: '/' });
+    console.log(req.user);
+    res.json(req.user)
 });
-
+router.post('/signup', usersController.signUp);
 
 module.exports = router;
