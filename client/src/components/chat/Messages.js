@@ -7,13 +7,15 @@ class Messages extends React.Component {
     super(props);
     this.messageList = React.createRef();
   }
-
   componentDidUpdate() {
+
     const messageList = this.messageList.current;
 
     // There is a new message in the state, scroll to bottom of list
-    console.log('messageList: %O', messageList);
-    messageList.scrollTop = messageList.scrollHeight;
+    //console.log('messageList: %O', messageList);
+    messageList.scrollIntoView(false);
+    messageList.scrollIntoView({behavior: "instant", block: "end", inline: "end"});
+
   }
 
   // loadMessages = () => {

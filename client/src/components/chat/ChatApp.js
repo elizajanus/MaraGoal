@@ -5,12 +5,26 @@ import Messages from './Messages';
 import ChatInput from './ChatInput';
 import config from '../../config';
 import API from '../../utils/API';
+import axios from "axios";
+
+/*axios.get("api/users/login", {
+  
+}).then(function(data) {
+  console.log(data);
+  sessionStorage["username"] = data.data.username;
+  console.log(sessionStorage["username"]);
+  // window.location.replace();
+  // If there's an error, log the error
+}).catch(function(err) {
+  console.log(err);
+});      */
 
 class ChatApp extends Component {
   socket = {};
+  
   state = {
-    username: 'MaraGoal user 1',
-    messages: [],
+    username: this.props.username,
+    messages: []
   };
 
   componentWillMount() {
@@ -26,13 +40,13 @@ class ChatApp extends Component {
 
   sendHandler = (message) => {
     const messageObject = {
-      username: this.props.username,
+      username: this.state.username,
       message: message
     };
 
 //console.log(messageObject);
     // Emit the message to the server
-   // this.socket.emit('client:message', messageObject);
+    this.socket.emit('client:message', messageObject);
 
 
    // messageObject.fromMe = true;
@@ -70,8 +84,8 @@ class ChatApp extends Component {
   }
 
 }
-ChatApp.defaultProps = {
+/*ChatApp.defaultProps = {
   username: 'MaraGoal user'
-};
+};*/
 
 export default ChatApp;
