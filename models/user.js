@@ -42,7 +42,8 @@ var UserSchema = new Schema({
 });
 
 UserSchema.methods.validPassword = function(password) {
-  console.log('UserSchema.methods.validPassword');
+  console.log("User schema: " + password + "compared to: " + this.password);
+  console.log("Hashed password: " + bcrypt.hashSync(password, bcrypt.genSaltSync(10), null));
   return bcrypt.compareSync(password, this.password);
 };
 
