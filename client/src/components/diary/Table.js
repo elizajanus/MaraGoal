@@ -63,8 +63,8 @@ class DiaryTable extends React.Component {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {
-          this.state.diaryEntries.map(row => (
+        {this.state.diaryEntries.map(row => {
+          return (
             <TableRow>
               <TableRowColumn>{row.dateOfRun}</TableRowColumn>
               <TableRowColumn>{row.runningTime}</TableRowColumn>
@@ -75,8 +75,8 @@ class DiaryTable extends React.Component {
               <TableRowColumn>{row.soloOrGroup}</TableRowColumn>
               <TableRowColumn>{row.speedHillsOrNormal}</TableRowColumn>
             </TableRow>
-          ))
-        }
+           ); 
+          })}
       </TableBody>
     </Table>
     );
