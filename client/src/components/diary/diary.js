@@ -2,10 +2,11 @@ import React from "react";
 import TextField from "material-ui/TextField";
 import RaisedButton from "material-ui/RaisedButton";
 import axios from 'axios';
-import LoginApp from "../LoginApp"
+// import LoginApp from "../LoginApp"
 
 class Diary extends React.Component {
   state = {
+    username: sessionStorage["username"],
     dateOfRun: "",
     dateOfRunError: "",
     runningDistance: "",
@@ -45,7 +46,7 @@ class Diary extends React.Component {
 
     if (this.state.length < 1) {
       isError = true;
-      errors.usernameError = "This is a required field";
+      errors.dateOfRun = "This is a required field";
     }
 
     this.setState({
@@ -59,6 +60,7 @@ class Diary extends React.Component {
   onSubmit = e => {
     e.preventDefault();
    const entry = {
+    username: sessionStorage["username"],
     dateOfRun: this.state.dateOfRun,
     runningTime: this.state.runningTime,
     runningDistance: this.state.runningDistance,

@@ -13,33 +13,26 @@ import {
   TableRowColumn
 } from "material-ui/Table";
 
-// db.User.find({SessionStorage(username)}).populate("diaryEntries").then(function(dbUser) {req.json(dbUser)
-
 class DiaryTable extends React.Component {
   state = {
     diaryEntries: [],
-    username: [],
+    username: sessionStorage["username"]
   }
 
-  
-
-  // componentDidMount() {
-  //   this.setState({
-  //     username: sessionStorage['username'],
-  //   });
-  //   axios.get('/api/diary', {params: {username}}) 
-  //  .then(res => {
-  //    console.log(res);
-  //    console.log(res.data);
-  //    username.setState({e : response.data});
-     
-  //    })
-  // };
+  getDiaryEntries() {
+    axios.get("api/diary", {
+        username: this.state.username,
+      })
+      .then(res => {
+        this.setState({e : data})
+      })
+      .catch(function(err) {
+        console.log(err);
+    }); 
+  }
     // get username or unique ID from session storage
     // Make AJAX request to  server to load diary entries belonging to that user
     // In the request's "then" handler, update the state's diaryEntries property with the data returned
-  
-
   render() {
     return (
       <Table>
