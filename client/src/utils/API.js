@@ -11,7 +11,11 @@ export default {
   },
 
   getRunStats: function () {
-    return axios.get("/api/diary");
+    return axios.get("/api/diary", {
+      params: {
+        username: sessionStorage['username']
+      }
+    });
   },
 
   saveRunStats: function (fields) {

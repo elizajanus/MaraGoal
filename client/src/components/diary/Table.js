@@ -3,6 +3,7 @@ import data from './diaryEntries.json';
 import diary from "./diary.js";
 import axios from 'axios';
 import LoginApp from "../LoginApp/LoginApp.js";
+import API from '../../utils/API';
  
 import {
   Table,
@@ -14,15 +15,19 @@ import {
 } from "material-ui/Table";
 
 class DiaryTable extends React.Component {
+  
   state = {
     diaryEntries: []
   }
-
+  
   componentDidMount() {
-    axios.get("/api/diary")
-      .then(res => {
-        const diaryEntries = res.data.data.map(obj => obj.data);
-        this.setState({ diaryEntries });
+    const that = this;
+    API.getRunStats()
+      .then(function(res) {
+        console.log(res.data);
+        const diaryEntries = res.data;
+        console.log(that);
+        that.setState({ diaryEntries: res.data });
       })
   }
   // getDiaryEntries = (e) => {
