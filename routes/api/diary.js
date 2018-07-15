@@ -13,5 +13,8 @@ router
   .put(diaryController.update)
   .delete(diaryController.remove);
 
+  router.route("/:username")
+  .get(diaryController.findUserEntries);
+
 module.exports = router;
 

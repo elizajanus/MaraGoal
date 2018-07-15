@@ -10,6 +10,14 @@ module.exports = {
       .then(dbDiary => res.json(dbDiary))
       .catch(err => res.status(422).json(err));
   },
+  findUserEntries: function(req, res) {
+    var username = req.params.username;
+    db.Diary
+      .find({"username": { $gt: username } })
+      .sort({ date: -1 })
+      .then(dbDiary => res.json(dbDiary))
+      .catch(err => res.status(422).json(err));
+  },
   create: function(req, res) {
     console.log(req.body)
     let diary = {
