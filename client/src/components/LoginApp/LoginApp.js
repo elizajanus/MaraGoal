@@ -9,10 +9,16 @@ class LoginApp extends Component {
         password: "",
         selectedDay: ""
     }
- 
-    loginButtonClick () {
-        
-        axios.post("api/users/login", {
+
+    handleButton () {
+        console.log(this.state.username);
+        console.log(this.state.password);
+    }
+    
+    loginButtonClick = (e) => {
+        e.preventDefault();
+        axios.post("/api/users/login", {
+           
             username: this.state.username,
             // selectedDay: this.state.selectedDay,
             password: this.state.password

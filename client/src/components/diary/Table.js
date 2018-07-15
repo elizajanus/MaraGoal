@@ -15,25 +15,34 @@ import {
 
 class DiaryTable extends React.Component {
   state = {
-    diaryEntries: [],
-    username: sessionStorage["username"]
+    diaryEntries: []
   }
 
-  getDiaryEntries() {
-    axios.get("api/diary", {
-        username: this.state.username,
-      })
+  componentDidMount() {
+    axios.get("/api/diary")
       .then(res => {
-        this.setState({e : data})
+        const diaryEntries = res.data.data.map(obj => obj.data);
+        this.setState({ diaryEntries });
       })
-      .catch(function(err) {
-        console.log(err);
-    }); 
   }
+  // getDiaryEntries = (e) => {
+    
+  //   e.preventDefault();
+  //   axios.get("/api/diary", {
+  //       params: sessionStorage["username"]
+  //   }).then(function(response) {
+  //       console.log("this is my table:" + response);
+  //   }).catch(function(err) {
+  //       console.log(err);
+  //   });
+  // }
+
+  
     // get username or unique ID from session storage
     // Make AJAX request to  server to load diary entries belonging to that user
     // In the request's "then" handler, update the state's diaryEntries property with the data returned
   render() {
+    
     return (
       <Table>
       <TableHeader>
