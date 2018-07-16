@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const diarySchema = new Schema({
   username: { type: String, required: true },
-  dateOfRun: { type: Date, default: Date.now, required: true },
+  dateOfRun: { type: String, required: true },
   runningTime: { type: String, required: true },
   runningDistance: { type: String, required: true },
   runningSurface: { type: String, required: true },
