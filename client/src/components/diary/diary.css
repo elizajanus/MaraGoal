@@ -1,7 +1,112 @@
-.running-form-toolbar {
- text-align: center, 
+#running-form-toolbar {
+ text-align: center;
 }
 
-.running-table-toolbar {
+#running-table-toolbar {
     text-align: center,
 }
+
+#running-form {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    color: white;
+    
+  }
+
+RaisedButton {
+    color:  #146bef;
+    
+}
+
+div.MuiToolbar-root-36.MuiToolbar-regular-38.MuiToolbar-gutters-37{   
+    background-color:  #146bef;
+    box-align: center; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+ 
+h2 {
+    background-color: #146bef;
+    padding: 15px;
+}
+
+.MuiTypography-colorInherit-59 {
+    color: white;
+}
+
+button {
+    color: rgb(11, 173, 193);
+}
+
+header.MuiPaper-root-9.MuiPaper-elevation4-15.MuiAppBar-root-1.MuiAppBar-positionStatic-5.MuiAppBar-colorPrimary-7{
+       background-color: #146bef;
+    text-align: center;
+    box-align: center; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* #MuiTypography-title-46{
+    background-color: #146bef;
+    text-align: center;
+     */
+
+label {
+    background-color: white;
+    color: black;
+}
+
+/* floatingLabelText {
+    color: black;
+    background-color: white;
+} */
+form{
+    box-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px; 
+    position: relative; 
+    width: 275px; 
+    border: none; 
+    outline: none; 
+    cursor: inherit; 
+     font: inherit; 
+     background-color: white;
+     color: black;
+     -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
+     height: 100%; box-sizing: border-box; 
+     margin-top: 14px;
+}
+
+/* element.style {
+    padding: 0px;
+    position: relative;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: white;
+    color: rgba(0, 0, 0, 0.87);
+    cursor: inherit;
+    font: inherit;
+    opacity: .5;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    height: 100%;
+    box-sizing: border-box;
+    margin-top: 14px; */
+
+
+TextField {
+    font-size: 16px;
+    line-height: 24px;
+    width: 256px;
+    height: 72px;
+    display: inline-block;
+    position: relative;
+    background-color: white;
+    opacity: 25%;
+    font-family: Roboto, sans-serif;
+    transition: height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    cursor: auto;
+} 
