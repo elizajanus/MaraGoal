@@ -4,6 +4,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Diary from './diary.js';
 import DiaryTable from "./Table.js";
 import data from './diaryEntries.json';
+import "./diary.css";
 // import Nav from "diaryHeader/diaryHeader.js"
 
 class DiaryApp extends Component {
