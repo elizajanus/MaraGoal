@@ -1,6 +1,8 @@
-.container {
+.container.chat {
   display: flex;
   flex-direction: column;
+  background-color: rgba(0,0,0,.7);
+  height: screen;
 }
 
 .messages {
@@ -8,6 +10,7 @@
   overflow-x: hidden;
   flex-grow: 1;
   padding: 10px;
+  min-height: 375px;
 }
 
 h3 {

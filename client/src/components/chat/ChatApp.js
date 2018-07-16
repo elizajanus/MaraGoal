@@ -61,7 +61,7 @@ class ChatApp extends Component {
 
   render() {
     return (
-              <div className="container">
+              <div className="container chat">
                 <h3>MaraGoal Groupchat</h3>
                   <div className="column">
                     <Messages username={this.state.username} messages={this.state.messages} />
