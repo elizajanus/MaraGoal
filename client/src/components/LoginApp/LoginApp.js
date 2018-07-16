@@ -1,35 +1,46 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import "./Login.css";
+
 
 class LoginApp extends Component {
 
-    state = {
-        username: "",
-        password: "",
-        selectedDay: ""
-    }
 
-    handleButton () {
-        console.log(this.state.username);
-        console.log(this.state.password);
-    }
+    constructor(props) {
+        super(props);
+    
+        this.state = {
+          username: "",
+          password: "",
+          selectedDay:""
+        };
+      }
+    
+      validateForm() {
+        return this.state.username.length > 0 && this.state.password.length > 0;
+      }
+    
+      handleChange = event => {
+        this.setState({
+          [event.target.id]: event.target.value
+        });
+      }
     
     loginButtonClick = (e) => {
         e.preventDefault();
         axios.post("/api/users/login", {
            
             username: this.state.username,
-            // selectedDay: this.state.selectedDay,
             password: this.state.password
             
         }).then(function(data) {
             console.log(data)
             sessionStorage["username"] = data.data.username;
             sessionStorage["selectedDay"] = data.data.selectedDay;
-            console.log("session storGE!!!!!!!!!!: " + sessionStorage["username"]);
-            // window.location.replace();
-            // If there's an error, log the error
+            console.log("session storage: " + sessionStorage["username"]);
+            
         }).catch(function(err) {
             console.log(err);
         });      
@@ -39,10 +50,6 @@ class LoginApp extends Component {
         this.setState({username: e.target.value});
     }
 
-    // handleEmail = (e)=> {
-    //     this.setState({email: e.target.value})
-    // }
-
     handlePassword = (e)=> {
         this.setState({password: e.target.value})
     }
@@ -50,76 +57,43 @@ class LoginApp extends Component {
 
     render () {
         return (
-            <div>
-                <ul className="nav nav-tabs">
-            <li className="nav-item">
-            <Link
-                to="/login"
-                // className={
-                //     window.location.pathname === "/signup" ? "nav-link active" : "nav-link"
-                // }
-            >
-                Login
-            </Link>
-        </li>
-        </ul>
-                <nav className="navbar navbar-default">
-                    <div className="container-fluid">
-                        <div className="navbar-header">
-                        </div>
-                    </div>
-                </nav>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-6 col-md-offset-3">
-                            <h2>Login Form</h2>
-                            <form className="login">
-                            <div className="form-group">
-                                    <label htmlFor="exampleInputUser1">Username</label>
-                                    <input 
-                                        value={this.state.username}
-                                        onChange={this.handleUser} 
-                                        type="username" 
-                                        className="form-control" 
-                                        id="user-input" 
-                                        placeholder="User" />
-                                </div>
-                                {/* <div className="form-group">
-                                    <label for="exampleInputEmail1">Email address</label>
-                                    <input 
-                                        value={this.state.email}
-                                        onChange={this.handleEmail} 
-                                        type="email" 
-                                        className="form-control" 
-                                        id="email-input" 
-                                        placeholder="Email" />
-                                </div> */}
-                            <div className="form-group">
-                                <label htmlFor="exampleInputPassword1">Password</label>
-                                <input 
-                                    value={this.state.password}
-                                    onChange={this.handlePassword} 
-                                    type="password" 
-                                    className="form-control" 
-                                    id="password-input" 
-                                    placeholder="Password" />
-                            </div>
-                            <button onClick={() => this.handleButton} type="submit" className="btn ben-default">Test</button>
-                            <button onClick={this.loginButtonClick} type="submit" className="btn btn-default">Login</button>
-
-                            </form>
-                        <br />
-                        <p>Already signed up? Login here.</p>
-                                <Link 
-                                    to={"/signup"}>
-                                    Signup
-                                </Link>
-                        </div>
-                    </div>
-                </div>
+            <div className="Login">
+            <form onSubmit={this.loginButtonClick}>
+                <FormGroup controlId="username" bsSize="large">
+                <ControlLabel>Username</ControlLabel>
+                <FormControl
+                    autoFocus
+                    type="username"
+                    value={this.state.username}
+                    onChange={this.handleChange}
+                />
+                </FormGroup>
+                <FormGroup controlId="password" bsSize="large">
+                <ControlLabel>Password</ControlLabel>
+                <FormControl
+                    value={this.state.password}
+                    onChange={this.handleChange}
+                    type="password"
+                />
+                </FormGroup>
+                <Button
+                    block
+                    bsSize="large"
+                    disabled={!this.validateForm()}
+                    type="submit">
+                    Login
+                </Button>
+                <p>Not signed up yet? Sign up here.</p>
+                    <Link 
+                        to={"/signup"}>
+                        Signup
+                    </Link>
+            </form>
             </div>
-        )
+        );
+        }
     }
-}
+
 
 export default LoginApp;
+
