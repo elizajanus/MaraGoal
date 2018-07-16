@@ -42,7 +42,7 @@ const HeroApp = () => (
 <Hero isColor='info' isSize='medium'>
 <HeroBody>
     <Container hasTextAlign='centered'>
-        <Title>Title</Title>
+        <Title>TMaraGoal</Title>
     </Container>
 </HeroBody>
 </Hero>

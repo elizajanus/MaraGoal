@@ -55,20 +55,34 @@ h3 {
 }*/
 .message {
   margin-bottom: 20px;
+  overflow:auto;
 }
 .message-body {
+  position: relative;
   max-width: 80%;
   display: inline-block;
-  padding: 10px;
   border: 1px;
-  border-radius: 5px;
+  padding: 15px;
   padding-right: 50px;
   overflow-wrap: break-word;
+  float: left;
+  clear: both;
+
+}
+
+.message-date {
+  position: relative;
+  font-size: 0.8rem;
+  float: right;
+  margin: 8px;
 }
 
 .username {
+  position: relative;
+  float: left;
   font-weight: bold;
   font-size: 0.9rem;
   color: #999;
-  margin: 5px;
+  margin: 8px;
+  clear:both;
 }

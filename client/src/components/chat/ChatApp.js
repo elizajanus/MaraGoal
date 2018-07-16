@@ -16,7 +16,7 @@ class ChatApp extends Component {
 
   componentWillMount() {
     console.log(sessionStorage['username']);
-    this.loadMessages();
+    this.loadMessages();   
     // Connect to the server
     this.socket = io(config.api, { query: `username=${this.state.username}` }).connect();
     

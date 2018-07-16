@@ -42,7 +42,7 @@ const Header = () => (
 <Hero isColor='info' isSize='medium' className='is-fullheight' className='bg-img'>
 < Navbar className = 'has-background-black'>
 <NavbarBrand>
-    <NavbarItem href="/SignupApp">
+    <NavbarItem href="/signup">
         <img src={brand} style={{ marginRight: 5 }} /> MaraGoal
     </NavbarItem>
     <NavbarItem isHidden='desktop'>
