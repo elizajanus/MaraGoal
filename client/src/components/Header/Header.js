@@ -55,7 +55,7 @@ const Header = () => (
 </NavbarBrand>
 <NavbarMenu >
     <NavbarStart>
-        <NavbarItem href="/calendar">Calender</NavbarItem>
+        <NavbarItem href="/calendar">Calendar</NavbarItem>
         <NavbarItem href="/groupchat">GroupChat</NavbarItem>
          <NavbarItem href="/diary">Diary</NavbarItem>
     </NavbarStart>
