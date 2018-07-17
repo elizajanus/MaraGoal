@@ -111,6 +111,8 @@ class SignupApp extends Component {
                     type="submit">
                     Signup
                 </Button>
+                <br />
+                <br />
                 <p>Already signed up? Login here.</p>
                     <Link 
                         to={"/login"}>

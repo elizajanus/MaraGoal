@@ -41,6 +41,8 @@ class LoginApp extends Component {
             sessionStorage["selectedDay"] = data.data.selectedDay;
             console.log("session storage: " + sessionStorage["username"]);
             
+        }).then(function() {
+            window.location.href = '/calendar';
         }).catch(function(err) {
             console.log(err);
         });      
@@ -69,22 +71,24 @@ class LoginApp extends Component {
                 />
                 </FormGroup>
                 <FormGroup controlId="password" bsSize="large">
-                <ControlLabel>Password</ControlLabel>
+                <ControlLabel>Password </ControlLabel>
                 <FormControl
                     value={this.state.password}
                     onChange={this.handleChange}
                     type="password"
                 />
                 </FormGroup>
-                <Button
+                <Button 
                     block
                     bsSize="large"
                     disabled={!this.validateForm()}
                     type="submit">
                     Login
                 </Button>
+                <br />
+                <br />
                 <p>Not signed up yet? Sign up here.</p>
-                    <Link 
+                    <Link className="link"
                         to={"/signup"}>
                         Signup
                     </Link>
@@ -96,4 +100,3 @@ class LoginApp extends Component {
 
 
 export default LoginApp;
-
