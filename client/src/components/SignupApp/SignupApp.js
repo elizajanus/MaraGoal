@@ -102,11 +102,12 @@ class SignupApp extends Component {
                 <FormControl
                     value={this.state.password}
                     onChange={this.handleChange}
-                    type="text"
+                    type="password"
                 />
                 </FormGroup>
                 <FormGroup>
                     <p>Which day for your long run?</p>
+                    Saturday
                     <FormControl
                     type="radio" 
                     name="pickDay" 
@@ -114,15 +115,19 @@ class SignupApp extends Component {
                     className="form-control" 
                     id="day-input1" 
                     checked={this.state.selectedDay==="saturday"} 
-                    onChange={this.handleDay} /><label htmlFor="day-input1">Saturday</label>
-                    <FormControl 
+                    onChange={this.handleDay}/>
+                    
+                    <br/>
+                    Sunday
+                    <FormControl
                     type="radio" 
                     name="pickDay" 
                     value="sunday"
                     className="form-control" 
                     id="day-input2" 
                     checked={this.state.selectedDay==="sunday"} 
-                    onChange={this.handleDay} /><label htmlFor="day-input2">Sunday</label>
+                    onChange={this.handleDay}/>
+                    
                 </FormGroup>
                 <Button
                     block
