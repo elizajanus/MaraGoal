@@ -84,7 +84,7 @@ class SignupApp extends Component {
                 <ControlLabel>Username</ControlLabel>
                 <FormControl
                     autoFocus
-                    type="username"
+                    type="text"
                     value={this.state.username}
                     onChange={this.handleChange}
                 />
@@ -93,7 +93,7 @@ class SignupApp extends Component {
                 <ControlLabel>Email</ControlLabel>
                 <FormControl
                     autoFocus
-                    type="email"
+                    type="text"
                     value={this.state.email}
                     onChange={this.handleChange}
                 />
@@ -103,10 +103,11 @@ class SignupApp extends Component {
                 <FormControl
                     value={this.state.password}
                     onChange={this.handleChange}
-                    type="password"
+                    type="text"
                 />
                 </FormGroup>
                 <FormGroup>
+                    <p>Which day for your long run?</p>
                     <FormControl
                     type="button" 
                     name="pickDay" 
@@ -124,7 +125,6 @@ class SignupApp extends Component {
                     id="day-input2" 
                     checked={this.state.selectedDay==="sunday"} 
                     onChange={this.handleDay} />
-                    
                 </FormGroup>
                 <Button
                     block
