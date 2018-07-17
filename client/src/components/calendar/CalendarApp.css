@@ -6,6 +6,7 @@
   margin: auto;
   flex: 1;
   min-height: 900px;
+  background-color: white;
 }
 
 .rbc-toolbar-label {
