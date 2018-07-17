@@ -68,11 +68,11 @@ class SignupApp extends Component {
         this.setState({password: e.target.value});
     }
 
-    /*handleDay = (changeEvent)=> {
+    handleDay = (changeEvent)=> {
         this.setState({
             selectedDay: changeEvent.target.value
         });   
-    }*/
+    }
 
     
     render () {
