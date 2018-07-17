@@ -43,14 +43,9 @@ const Header = () => (
 < Navbar className = 'has-background-black'>
 <NavbarBrand>
     <NavbarItem href="/signup">
-        <img src={brand} style={{ marginRight: 5 }} /> MaraGoal
+        <img src='/images/logo2-01.png' style={{ hight: 300 }} />
     </NavbarItem>
-    <NavbarItem isHidden='desktop'>
-        <Icon className='fa fa-github' />
-    </NavbarItem>
-    <NavbarItem isHidden='desktop'>
-        <Icon className='fa fa-twitter' style={{ color: '#55acee' }} />
-    </NavbarItem>
+
     <NavbarBurger  />
 </NavbarBrand>
 <NavbarMenu >

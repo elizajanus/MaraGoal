@@ -15,3 +15,6 @@ FormControl {
   box-align: right;
 }
 
+.form-inline {
+  width: 100%;
+}
