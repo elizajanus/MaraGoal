@@ -11,7 +11,7 @@ class SignupApp extends Component {
         username: "",
         email: "",
         password: "",
-        selectedDay: "saturday"
+        selectedDay: ""
     }
 
     constructor(props) {
@@ -68,11 +68,11 @@ class SignupApp extends Component {
         this.setState({password: e.target.value});
     }
 
-    handleDay = (changeEvent)=> {
+    /*handleDay = (changeEvent)=> {
         this.setState({
             selectedDay: changeEvent.target.value
         });   
-    }
+    }*/
 
     
     render () {
