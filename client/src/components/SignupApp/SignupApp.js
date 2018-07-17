@@ -92,7 +92,6 @@ class SignupApp extends Component {
                 <FormGroup controlId="email" bsSize="large">
                 <ControlLabel>Email</ControlLabel>
                 <FormControl
-                    autoFocus
                     type="text"
                     value={this.state.email}
                     onChange={this.handleChange}
