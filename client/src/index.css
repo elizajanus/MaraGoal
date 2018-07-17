@@ -3,17 +3,41 @@ body {
   padding: 0;
   font-family: 'Lustria',
   serif;
+  height: 100%;
 }
+
+html {
+  background: url(/images/done.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  }
+
 .bg-img {
   background-image: url(/images/done.jpg);
   background-attachment: fixed;
   background-size: cover;
-  
-  background-position: center center;
+  height: 100%;
+  background-position: center;
   background-repeat: no-repeat;
+  position: relative;
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%
 }
 
 .name {
   font-size: 70pt;
   
+}
+
+.footie {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
 }
