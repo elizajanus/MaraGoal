@@ -43,7 +43,7 @@ const Header = () => (
 < Navbar className = 'has-background-black'>
 <NavbarBrand>
     <NavbarItem href="/signup">
-        <img src='../../../public/images/Logo2-01.png' style={{ hight: 300 }} />
+        <img src='/images/Logo2-01.png' style={{ height: 300 }} />
     </NavbarItem>
 
     <NavbarBurger  />
