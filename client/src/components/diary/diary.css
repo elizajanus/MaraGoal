@@ -13,10 +13,15 @@
     color: white;
     
   }
+typography{
+    font-size: 20px;
+    font-family: 'Lustria', serif;
+}
 
-RaisedButton {
-    color:  #146bef;
-    
+.appbar{
+    color: white;
+    background-color:  #146bef;
+    font-family: 'Lustria', serif;
 }
 
 div.MuiToolbar-root-36.MuiToolbar-regular-38.MuiToolbar-gutters-37{   

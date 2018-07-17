@@ -97,9 +97,9 @@ class Diary extends React.Component {
   render() {
     return (
       <div>
-       <AppBar position="static">
-        <Toolbar class= "running-form-toolbar" color= "blue">
-          <Typography variant="title" color="inherit">
+       <AppBar class="appbar" appbarposition="static">
+        <Toolbar class= "running-form-toolbar">
+          <Typography class="typography" variant="title" color="inherit">
             How Was Your Run Today?
           </Typography>
         </Toolbar>

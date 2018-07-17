@@ -28,9 +28,9 @@ class DiaryTable extends React.Component {
   render() {
     return (
       <div>
-      <AppBar position="static">
+      <AppBar class="appbar" position="static">
         <Toolbar>
-          <Typography variant="title" color="inherit">
+          <Typography  class="typography" variant="title" color="inherit">
             Your Running Diary
           </Typography>
         </Toolbar>
