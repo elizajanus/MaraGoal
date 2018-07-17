@@ -106,6 +106,25 @@ class SignupApp extends Component {
                     type="password"
                 />
                 </FormGroup>
+                <FormGroup>
+                    <input
+                    type="radio" 
+                    name="pickDay" 
+                    value="saturday" 
+                    className="form-control" 
+                    id="day-input1" 
+                    checked={this.state.selectedDay==="saturday"} 
+                    onChange={this.handleDay} /><label htmlFor="day-input1">Saturday</label>
+                    
+                    <input 
+                    type="radio" 
+                    name="pickDay" 
+                    value="sunday" 
+                    className="form-control" 
+                    id="day-input2" 
+                    checked={this.state.selectedDay==="sunday"} 
+                    onChange={this.handleDay} /><label htmlFor="day-input2">Sunday</label>
+                </FormGroup>
                 <Button
                     block
                     bsSize="large"
