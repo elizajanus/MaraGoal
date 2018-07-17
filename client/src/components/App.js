@@ -12,6 +12,8 @@ import Bulma from 'bulma';
 import '../index.css';
 import SignupApp from './SignupApp/SignupApp';
 import LoginApp from './LoginApp/LoginApp';
+import {Hero}
+from 'bloomer';
 
 
 
@@ -20,7 +22,7 @@ const App = () =>  (
     <Router>
         < div className = "bg-img" > 
             <Header />  
-            
+           
             <Switch>
                 <Route exact path="/" component={LoginApp} />
                 <Route exact path="/login" component={LoginApp} />
@@ -29,7 +31,7 @@ const App = () =>  (
                 <Route exact path="/groupchat" component={ChatApp} />
                 <Route exact path="/diary" component={DiaryApp} />
             </Switch>
-            <Footer />
+           
         </div>
   </Router>
 );
