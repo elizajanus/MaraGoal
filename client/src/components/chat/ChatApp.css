@@ -62,6 +62,7 @@ h3 {
   overflow:auto;
 }
 .message-body {
+  font-size: 1.3rem;
   position: relative;
   max-width: 80%;
   display: inline-block;
@@ -76,7 +77,7 @@ h3 {
 
 .message-date {
   position: relative;
-  font-size: 0.8rem;
+  font-size: 1.5rem;
   float: right;
   margin: 8px;
 }
@@ -85,7 +86,7 @@ h3 {
   position: relative;
   float: left;
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 1.5rem;
   color: #999;
   margin: 8px;
   clear:both;
