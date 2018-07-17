@@ -9,3 +9,9 @@
     max-width: 320px;
   }
 }
+
+FormControl{
+  margin-right: auto;
+  box-align: right;
+}
+
