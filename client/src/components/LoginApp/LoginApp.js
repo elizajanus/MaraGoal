@@ -41,6 +41,8 @@ class LoginApp extends Component {
             sessionStorage["selectedDay"] = data.data.selectedDay;
             console.log("session storage: " + sessionStorage["username"]);
             
+        }).then(function() {
+            window.location.href = '/calendar';
         }).catch(function(err) {
             console.log(err);
         });      

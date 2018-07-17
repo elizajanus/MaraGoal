@@ -47,9 +47,11 @@ class SignupApp extends Component {
             sessionStorage["username"] = data.data.username;
             sessionStorage["selectedDay"] = data.data.selectedDay;
             console.log(sessionStorage["username"]);
-            
-           
-        }).catch(err => console.log(err));
+        }).then(function() {
+            window.location.href = '/calendar';
+        }).catch(function(err) {
+            console.log(err);
+        }); 
     }
 
     
@@ -109,7 +111,7 @@ class SignupApp extends Component {
                     bsSize="large"
                     disabled={!this.validateForm()}
                     type="submit">
-                    Signup
+                    Sign up
                 </Button>
                 <p>Already signed up? Login here.</p>
                     <Link 
