@@ -11,7 +11,7 @@ class SignupApp extends Component {
         username: "",
         email: "",
         password: "",
-        selectedDay: "saturday"
+        selectedDay: ""
     }
 
     constructor(props) {
@@ -108,22 +108,21 @@ class SignupApp extends Component {
                 <FormGroup>
                     <p>Which day for your long run?</p>
                     <FormControl
-                    type="button" 
+                    type="radio" 
                     name="pickDay" 
-                    value="saturday" 
+                    value="saturday"
                     className="form-control" 
                     id="day-input1" 
                     checked={this.state.selectedDay==="saturday"} 
-                    onChange={this.handleDay} />
-                    <br/>
+                    onChange={this.handleDay} /><label htmlFor="day-input1">Saturday</label>
                     <FormControl 
-                    type="button" 
+                    type="radio" 
                     name="pickDay" 
-                    value="sunday" 
+                    value="sunday"
                     className="form-control" 
                     id="day-input2" 
                     checked={this.state.selectedDay==="sunday"} 
-                    onChange={this.handleDay} />
+                    onChange={this.handleDay} /><label htmlFor="day-input2">Sunday</label>
                 </FormGroup>
                 <Button
                     block
