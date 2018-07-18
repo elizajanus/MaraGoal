@@ -18,7 +18,7 @@ class ChatApp extends Component {
     console.log(sessionStorage['username']);
     this.loadMessages();   
     // Connect to the server
-    this.socket = openSocket('http://localhost:8000');/*config.api, { query: `username=${this.state.username}` }*/
+    this.socket = openSocket();/*config.api, { query: `username=${this.state.username}` }*/
     
     // Listen for messages from the server
     this.socket.on('server:message', message => {
