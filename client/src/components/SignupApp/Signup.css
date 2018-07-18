@@ -10,11 +10,9 @@
   }
 }
 
-FormControl {
+FormControl{
   margin-right: auto;
   box-align: right;
 }
 
-.form-inline {
-  width: 100%;
-}
+
