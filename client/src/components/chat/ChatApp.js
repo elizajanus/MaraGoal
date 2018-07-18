@@ -57,6 +57,7 @@ class ChatApp extends Component {
     // Append the message to the component state
     const messages = [...this.state.messages, message];
     this.setState({ messages });
+    this.loadMessages(); 
   }
 
   render() {
