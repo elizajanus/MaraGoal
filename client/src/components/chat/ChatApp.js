@@ -23,6 +23,7 @@ class ChatApp extends Component {
     // Listen for messages from the server
     this.socket.on('server:message', message => {
       this.addMessage(message);
+      this.loadMessages();
     });
   }
 
@@ -57,7 +58,7 @@ class ChatApp extends Component {
     // Append the message to the component state
     const messages = [...this.state.messages, message];
     this.setState({ messages });
-    this.loadMessages(); 
+     
   }
 
   render() {
