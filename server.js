@@ -7,8 +7,9 @@ const passport = require('./config/passport');
 const session = require('express-session');
 const app = express();
 const server = require('http').createServer(app);
-const io = require('socket.io')(server);
+const io = require('socket.io')();
 const PORT = process.env.PORT || 3001;
+const SOCKETPORT = 8000;
 
 app.use(function (req, res, next) {
   const origin = req.get('origin');
@@ -25,6 +26,16 @@ app.use(function (req, res, next) {
     next();
 }
 });
+
+io.on("connection", (client) => {
+  console.log("client connected");
+  client.on('client:message', (messageObject) => {
+    console.log(messageObject.username, messageObject.message);
+    io.emit('server:message', messageObject);
+  })
+});
+io.listen(SOCKETPORT);
+console.log(`socket.io listening on PORT ${SOCKETPORT}!`);
 
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));

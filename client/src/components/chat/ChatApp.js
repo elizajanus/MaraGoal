@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './ChatApp.css';
-import io from 'socket.io-client';
+import openSocket from 'socket.io-client';
 import Messages from './Messages';
 import ChatInput from './ChatInput';
 import config from '../../config';
@@ -18,7 +18,7 @@ class ChatApp extends Component {
     console.log(sessionStorage['username']);
     this.loadMessages();   
     // Connect to the server
-    this.socket = io(config.api, { query: `username=${this.state.username}` }).connect();
+    this.socket = openSocket('http://localhost:8000');/*config.api, { query: `username=${this.state.username}` }*/
     
     // Listen for messages from the server
     this.socket.on('server:message', message => {
@@ -54,9 +54,11 @@ class ChatApp extends Component {
   };
 
   addMessage(message) {
+    console.log(message);
     // Append the message to the component state
     const messages = [...this.state.messages, message];
     this.setState({ messages });
+    
      
   }
 
