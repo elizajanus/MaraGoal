@@ -1,20 +1,13 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import data from './diaryEntries.json';
-import diary from "./diary.js";
-import { withStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+//import data from './diaryEntries.json';
+//import diary from "./diary.js";
+//import { withStyles } from '@material-ui/core/styles';
+//import AppBar from '@material-ui/core/AppBar';
+//import Toolbar from '@material-ui/core/Toolbar';
+//import Typography from '@material-ui/core/Typography';
  
-import {
-  Table,
-  TableBody,
-  TableHeader,
-  TableHeaderColumn,
-  TableRow,
-  TableRowColumn
-} from "material-ui/Table";
+import { Table } from 'react-bootstrap';
 
 class DiaryTable extends React.Component {
   state = {
@@ -28,42 +21,42 @@ class DiaryTable extends React.Component {
   render() {
     return (
       <div>
-      <AppBar class="appbar" position="static">
-        <Toolbar>
-          <Typography  class="typography" variant="title" color="inherit">
+
+          <h1 style={{color: "#ffffff"}}>
             Your Running Diary
-          </Typography>
-        </Toolbar>
-      </AppBar>
+          </h1>
+
         <Table>
-        <TableHeader>
-          <TableRow>
-              <TableHeaderColumn>Date</TableHeaderColumn>  
-              <TableHeaderColumn>Pace</TableHeaderColumn>
-              <TableHeaderColumn>Distance</TableHeaderColumn>
-              <TableHeaderColumn>Surface</TableHeaderColumn>
-              <TableHeaderColumn>Injury</TableHeaderColumn>
-              <TableHeaderColumn>Weather</TableHeaderColumn>
-              <TableHeaderColumn>Solo/Group</TableHeaderColumn>
-              <TableHeaderColumn>Speed/Hill/Normal</TableHeaderColumn>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
+        <thead>
+          <tr style={{color: "#ffffff"}}>
+              <th>Date</th>  
+              <th>Pace</th>
+              <th>Distance</th>
+              <th>Surface</th>
+              <th>Injury</th>
+              <th>Weather</th>
+              <th>Solo/Group</th>
+              <th>Speed/Hill/Normal</th>
+          </tr>
+        </thead>
+        <tbody>
           {
             this.props.diaryEntries.map(row => (
-              <TableRow>
-                <TableRowColumn>{row.dateOfRun}</TableRowColumn>
-                <TableRowColumn>{row.runningTime}</TableRowColumn>
-                <TableRowColumn>{row.runningDistance}</TableRowColumn>
-                <TableRowColumn>{row.runningSurface}</TableRowColumn>
-                <TableRowColumn>{row.runningInjury}</TableRowColumn>
-                <TableRowColumn>{row.weatherOnRun}</TableRowColumn>
-                <TableRowColumn>{row.soloOrGroup}</TableRowColumn>
-                <TableRowColumn>{row.speedHillsOrNormal}</TableRowColumn>
-              </TableRow>
+              <tr style={{color: "#ffffff"}}>
+                <td>
+                {row.dateOfRun}
+                </td>
+                <td>{row.runningTime}</td>
+                <td>{row.runningDistance}</td>
+                <td>{row.runningSurface}</td>
+                <td>{row.runningInjury}</td>
+                <td>{row.weatherOnRun}</td>
+                <td>{row.soloOrGroup}</td>
+                <td>{row.speedHillsOrNormal}</td>
+              </tr>
             ))
           }
-        </TableBody>
+        </tbody>
       </Table>
     </div>
     );

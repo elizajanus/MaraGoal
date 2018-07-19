@@ -1,6 +1,6 @@
 import React from 'react';
 import Message from './Message';
-import API from '../../utils/API';
+import { Col, Row } from 'react-bootstrap';
 
 class Messages extends React.Component {
   constructor(props) {
@@ -13,8 +13,10 @@ class Messages extends React.Component {
 
     // There is a new message in the state, scroll to bottom of list
     //console.log('messageList: %O', messageList);
-    messageList.scrollIntoView(false);
+    //messageList.scrollIntoView(false);
     messageList.scrollIntoView({behavior: "instant", block: "end", inline: "end"});
+
+    // was this scrolling working before? hello??
 
   }
 
@@ -33,9 +35,12 @@ class Messages extends React.Component {
       });
    
     return (
+
+
       <div className='messages' id='messageList' ref={this.messageList}>
         { messages }
       </div>
+
     );
   }
 }

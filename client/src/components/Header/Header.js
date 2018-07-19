@@ -1,68 +1,37 @@
-import * as React from 'react';
+import React, { Component } from 'react';
+import { Navbar, Nav, NavItem,  } from 'react-bootstrap';
 
+class Header extends Component {
+constructor(props) {
+    super(props);
 
-import {
-    Container,
-    Box,
-    Hero,
-    HeroHeader,
-    HeroBody,
-    HeroFooter,
-    Nav,
-    NavLeft,
-    NavItem,
-    NavCenter,
-    NavRight,
-    Navbar,
-    NavbarBrand,
-    NavbarItem,
-    brand,
-    NavbarBurger,
-    NavbarMenu,
-    NavbarStart,
-    NavbarLink,
-    NavbarDropdown,
-    NavbarDivider,
-    NavbarEnd,
-    Field,
-    Control,
-    Button,
-    Icon,
-    Tabs,
-    TabList,
-    Tab,
-    TabLink,
-    Title
-} from 'bloomer';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { fagithub } from '@fortawesome/free-solid-svg-icons';
-import Bulma from 'bulma'
+    this.state = {
+      isActive: false
+    };
+  }
 
-const Header = () => (
-<Hero isColor='info' isSize='medium' className='is-fullheight' className='bg-img'>
-< Navbar className = 'has-background-black'>
-<NavbarBrand>
-    <NavbarItem href="/signup">
-        <img src='/images/Logo2-01.png' style={{ height: 300 }} />
-    </NavbarItem>
+onClickNav() {
+    this.setState({ isActive: !this.state.isActive });
+}
+render () {
+        return (
+            <Navbar inverse collapseOnSelect>
+              <Navbar.Header>
+                <Navbar.Brand>
+                  <a href="#brand"><img src='/images/Logo2-01.png' alt="MaraGoal" style={{ width: 100 }} /></a>
+                </Navbar.Brand>
+                <Navbar.Toggle />
+              </Navbar.Header>
+               <Navbar.Collapse>
+                <Nav pullRight>
+                    <NavItem href="/calendar">Calendar</NavItem>
+                    <NavItem href="/groupchat">GroupChat</NavItem>
+                    <NavItem href="/diary">Diary</NavItem>
+                </Nav>
+                </Navbar.Collapse>
+            </Navbar>
 
-    <NavbarBurger  />
-</NavbarBrand>
-<NavbarMenu >
-    <NavbarStart>
-        <NavbarItem href="/calendar">Calendar</NavbarItem>
-        <NavbarItem href="/groupchat">GroupChat</NavbarItem>
-         <NavbarItem href="/diary">Diary</NavbarItem>
-    </NavbarStart>
-    <NavbarEnd>
-       
-        
-    </NavbarEnd>
-</NavbarMenu>
-</Navbar>
-
-</Hero>
-);
-  
-
+        );
+    }
+}
 export default Header;

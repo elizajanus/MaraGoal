@@ -10,8 +10,7 @@ const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 const PORT = process.env.PORT || 3001;
 const SOCKETPORT = process.env.SOCKETPORT || 8000;
-
-server.listen(process.env.PORT || 3000);
+server.listen(PORT);
 
 app.use(function (req, res, next) {
   const origin = req.get('origin');

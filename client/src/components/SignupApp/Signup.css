@@ -1,18 +1,7 @@
-@media all and (min-width: 480px) {
-  .Login {
-    padding: 60px 0;
-    background-color: white;
-  }
-
-  .Login form {
-    margin: 0 auto;
-    max-width: 320px;
-  }
+.Login {
+  display: table;
 }
-
-FormControl{
-  margin-right: auto;
-  box-align: right;
+.vAlign {
+  display: table-cell;
+  vertical-align: middle;
 }
-
-

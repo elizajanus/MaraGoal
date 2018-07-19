@@ -3,7 +3,9 @@ import "./CalendarApp.css";
 import { saturday, sunday } from './events';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import BigCalendar from 'react-big-calendar';
+import { Grid, Row, Col, } from 'react-bootstrap';
 import moment from 'moment';
+import Header from "../Header";
 
 BigCalendar.setLocalizer(BigCalendar.momentLocalizer(moment))
 
@@ -25,13 +27,18 @@ class CalendarApp extends Component {
   render () {
     return (
       <div>
-        <BigCalendar
-            events={this.state.selectedDay === "saturday" ? saturday : sunday}
-            views={allViews}
-            step={60}
-            showMultiDayTimes
-            defaultDate={new Date(2018, 5, 1)}
-        /> 
+        <Header />
+        <Grid>
+          <Row>
+          <BigCalendar
+              events={this.state.selectedDay === "saturday" ? saturday : sunday}
+              views={allViews}
+              step={60}
+              showMultiDayTimes
+              defaultDate={new Date(2018, 5, 1)}
+          /> 
+          </Row>
+        </Grid>
       </div>
     )
   }
