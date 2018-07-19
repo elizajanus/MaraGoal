@@ -39,7 +39,7 @@ class DiaryApp extends Component {
     return (
   
 
-          <div className="App">
+          <div className="Diary" style={{height:"100vh"}}>
             <Header />
             <Grid>
             <Row>
