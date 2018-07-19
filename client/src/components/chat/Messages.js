@@ -1,6 +1,6 @@
 import React from 'react';
 import Message from './Message';
-import API from '../../utils/API';
+import { Col, Row } from 'react-bootstrap';
 
 class Messages extends React.Component {
   constructor(props) {
@@ -33,9 +33,12 @@ class Messages extends React.Component {
       });
    
     return (
+
+
       <div className='messages' id='messageList' ref={this.messageList}>
         { messages }
       </div>
+
     );
   }
 }

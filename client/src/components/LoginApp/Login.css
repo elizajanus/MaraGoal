@@ -1,6 +1,6 @@
-@media all and (min-width: 480px) {
+/* @media all and (min-width: 480px) {
   .Login {
-    padding: 20px;
+/*    padding: 20px;
     background-color: white;
     margin: 0 auto;
     max-width: 320px;
@@ -9,22 +9,22 @@
     margin-right: auto;
     padding: 5px; 
     position: relative; 
-    opacity: .95;
-  }
-  .form {
-    margin: 0 auto;
+    opacity: .95;*/
+  /* }
+  .form { */
+/*    margin: 0 auto;
     max-width: 320px;
     margin-left: auto;
     margin-right: auto;
     padding: 5px; 
-    position: relative; 
-  }
+    position: relative; */
+  /* }
 }
-.form-control{
-  margin-right: auto;
+.form-control{ */
+/*  margin-right: auto;*/
   
-}
+/* }
 .button {
-  margin-left: auto;
-  margin-right: auto;
-}
+/*  margin-left: auto;
+  margin-right: auto;*/
+/* } */

@@ -1,28 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import NavTabs from "./NavTabs";
 import ChatApp from './chat/ChatApp';
 import CalendarApp from './calendar/CalendarApp';
 import DiaryApp from "./diary/DiaryApp";
 import 'font-awesome/css/font-awesome.css';
 import Header from "./Header/Header";
-import HeroApp from "./Hero/HeroApp";
-import Footer from "./Footer/Footer";
-import Bulma from 'bulma';
 import '../index.css';
 import SignupApp from './SignupApp/SignupApp';
 import LoginApp from './LoginApp/LoginApp';
-import {Hero}
-from 'bloomer';
-
-
-
 
 const App = () =>  (
-    <Router>
-        < div className = "bg-img" > 
-            <Header />  
-           
+    <Router> 
+        <div>
             <Switch>
                 <Route exact path="/" component={LoginApp} />
                 <Route exact path="/login" component={LoginApp} />
@@ -31,9 +20,8 @@ const App = () =>  (
                 <Route exact path="/groupchat" component={ChatApp} />
                 <Route exact path="/diary" component={DiaryApp} />
             </Switch>
-           
         </div>
-  </Router>
+    </Router>
 );
 
   

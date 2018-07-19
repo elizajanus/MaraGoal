@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import Header from "../Header";
+import { Button, FormGroup, FormControl, ControlLabel,
+        Grid, Row, Col, Clearfix  } from "react-bootstrap";
 import "./Login.css";
 
 
@@ -60,7 +62,11 @@ class LoginApp extends Component {
     render () {
         return (
             <div className="Login">
+            <Header />
+            <Grid>
+
             <form onSubmit={this.loginButtonClick}>
+            <Row>
                 <FormGroup controlId="username" bsSize="large">
                 <ControlLabel>Username</ControlLabel>
                 <FormControl
@@ -70,6 +76,8 @@ class LoginApp extends Component {
                     onChange={this.handleChange}
                 />
                 </FormGroup>
+            </Row>
+            <Row>
                 <FormGroup controlId="password" bsSize="large">
                 <ControlLabel>Password </ControlLabel>
                 <FormControl
@@ -78,6 +86,8 @@ class LoginApp extends Component {
                     type="password"
                 />
                 </FormGroup>
+            </Row>
+            <Row>
                 <Button 
                     block
                     bsSize="large"
@@ -85,14 +95,12 @@ class LoginApp extends Component {
                     type="submit">
                     Login
                 </Button>
-                <br />
-                <br />
-                <p>Not signed up yet? Sign up here.</p>
-                    <Link className="link"
-                        to={"/signup"}>
-                        Signup
-                    </Link>
+                <p>Not signed up yet?  <Link className="link" to={"/signup"}>Signup here</Link>.</p>
+            </Row>
+
+                
             </form>
+            </Grid>
             </div>
         );
         }

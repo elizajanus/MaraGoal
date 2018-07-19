@@ -1,7 +1,18 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import Header from "../Header";
 import { Link } from "react-router-dom";
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { 
+        Button,
+        ButtonGroup,
+        ButtonToolbar,
+        ToggleButtonGroup,
+        ToggleButton,
+        FormGroup, 
+        FormControl, 
+        ControlLabel,
+        Grid, Row, Col, Clearfix 
+} from "react-bootstrap";
 import "./Signup.css";
 
 class SignupApp extends Component {
@@ -79,7 +90,13 @@ class SignupApp extends Component {
         return (
         
         <div className="Login">
+            <Header />
+
+            <Grid>
+                
             <form onSubmit={this.submitButtonClick}>
+
+            <Row>
                 <FormGroup controlId="username" bsSize="large">
                 <ControlLabel>Username</ControlLabel>
                 <FormControl
@@ -89,6 +106,9 @@ class SignupApp extends Component {
                     onChange={this.handleChange}
                 />
                 </FormGroup>
+            </Row>
+
+            <Row>
                 <FormGroup controlId="email" bsSize="large">
                 <ControlLabel>Email</ControlLabel>
                 <FormControl
@@ -97,6 +117,9 @@ class SignupApp extends Component {
                     onChange={this.handleChange}
                 />
                 </FormGroup>
+            </Row>
+
+            <Row>
                 <FormGroup controlId="password" bsSize="large">
                 <ControlLabel>Password</ControlLabel>
                 <FormControl
@@ -105,30 +128,57 @@ class SignupApp extends Component {
                     type="password"
                 />
                 </FormGroup>
-                <FormGroup>
-                    <p>Which day for your long run?</p>
-                    Saturday
-                    <FormControl
-                    type="radio" 
-                    name="pickDay" 
+            </Row>
+
+            <Row>
+            <FormGroup>
+                <p>Choose a day to do your long run</p>
+              <ButtonToolbar>
+                <ToggleButtonGroup type="radio" name="options">
+                  <ToggleButton 
                     value="saturday"
-                    className="form-control" 
-                    id="day-input1" 
-                    checked={this.state.selectedDay==="saturday"} 
-                    onChange={this.handleDay}/>
-                    
-                    <br/>
-                    Sunday
-                    <FormControl
-                    type="radio" 
+                    id="day-input1"
                     name="pickDay" 
+                    checked={this.state.selectedDay==="saturday"} 
+                    onChange={this.handleDay}
+                    >Saturday</ToggleButton>
+                  <ToggleButton 
                     value="sunday"
-                    className="form-control" 
-                    id="day-input2" 
+                    id="day-input2"
+                    name="pickDay" 
                     checked={this.state.selectedDay==="sunday"} 
-                    onChange={this.handleDay}/>
-                    
-                </FormGroup>
+                    onChange={this.handleDay}
+                    >
+                    Sunday
+                    </ToggleButton>
+                </ToggleButtonGroup>
+              </ButtonToolbar>
+                { /*
+                Saturday
+                <FormControl
+                type="radio" 
+                name="pickDay" 
+                value="saturday"
+                className="form-control" 
+                id="day-input1" 
+                checked={this.state.selectedDay==="saturday"} 
+                onChange={this.handleDay}/>
+                
+                <br/>
+                Sunday
+                <FormControl
+                type="radio" 
+                name="pickDay" 
+                value="sunday"
+                className="form-control" 
+                id="day-input2" 
+                checked={this.state.selectedDay==="sunday"} 
+                onChange={this.handleDay}/>
+                */}
+            </FormGroup>
+            </Row>
+
+            <Row>
                 <Button
                     block
                     bsSize="large"
@@ -136,14 +186,11 @@ class SignupApp extends Component {
                     type="submit">
                     Sign up
                 </Button>
-                <br />
-                <br />
-                <p>Already signed up? Login here.</p>
-                    <Link 
-                        to={"/login"}>
-                        Login
-                    </Link>
+                <p>Already signed up? <Link to={"/login"}>Login here</Link>.</p>
+            </Row>
+
             </form>
+            </Grid>
             </div>
         );
     }
