@@ -127,22 +127,23 @@ class SignupApp extends Component {
                                     <p>Choose a day to do your long run</p>
                                         <ButtonToolbar>
                                             <ToggleButtonGroup type="radio" name="options">
-                                            <ToggleButton 
+                                            <FormControl
+                                                type="radio"
                                                 value="saturday"
                                                 id="day-input1"
                                                 name="pickDay" 
                                                 checked={this.state.selectedDay==="saturday"} 
                                                 onChange={this.handleDay}
-                                                >Saturday</ToggleButton>
-                                            <ToggleButton 
+                                                />Saturday
+                                            <FormControl 
+                                                type="radio"
                                                 value="sunday"
                                                 id="day-input2"
                                                 name="pickDay" 
                                                 checked={this.state.selectedDay==="sunday"} 
                                                 onChange={this.handleDay}
-                                                >
+                                                />
                                                 Sunday
-                                                </ToggleButton>
                                             </ToggleButtonGroup>
                                         </ButtonToolbar>
                                     { /*
