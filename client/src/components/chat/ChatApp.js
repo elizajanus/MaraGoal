@@ -3,8 +3,11 @@ import './ChatApp.css';
 import openSocket from 'socket.io-client';
 import Messages from './Messages';
 import ChatInput from './ChatInput';
-import config from '../../config';
+import { panel } from "react-bootstrap";
+// import config from '../../config';
 import API from '../../utils/API';
+import Header from "../Header";
+import { Grid, Row } from 'react-bootstrap';
 
 class ChatApp extends Component {
   socket = {};
@@ -64,12 +67,17 @@ class ChatApp extends Component {
 
   render() {
     return (
-              <div className="container chat">
+              <div className="chat">
+              <Header />
+              <Grid>
                 <h3>MaraGoal Groupchat</h3>
-                  <div className="column">
+
+                  <div>
                     <Messages username={this.state.username} messages={this.state.messages} />
+                                    <hr />
                     <ChatInput onSend={this.sendHandler} />
                   </div>
+              </Grid>
               </div>
     );
   }

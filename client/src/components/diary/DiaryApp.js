@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Diary from './diary.js';
 import DiaryTable from "./Table.js";
+import Header from "../Header";
+import { Grid, Row, Column, Clearfix } from "react-bootstrap";
 import data from './diaryEntries.json';
-import "./diary.css";
-// import Nav from "diaryHeader/diaryHeader.js"
 
 class DiaryApp extends Component {
   //this section is for input for the diary
@@ -33,19 +32,25 @@ class DiaryApp extends Component {
     let updatedDiaryEntries = this.state.diaryEntries;
     updatedDiaryEntries.push(newEntry);
     this.setState({ diaryEntries: updatedDiaryEntries });
+    
   }
 
   render() {
     return (
-      <div>
-        <MuiThemeProvider>
+  
+
           <div className="App">
+            <Header />
+            <Grid>
+            <Row>
             <Diary onAddEntry={this.addEntry.bind(this)} />
-            <br />
+            </Row>
+            <Row>
             <DiaryTable diaryEntries={this.state.diaryEntries} />
+            </Row>
+            </Grid>
           </div>
-        </MuiThemeProvider>
-      </div>
+
     )
   }
 };

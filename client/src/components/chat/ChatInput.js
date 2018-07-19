@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormGroup, FormControl, InputGroup, Button } from 'react-bootstrap';
 
 class ChatInput extends React.Component {
   constructor(props) {
@@ -19,6 +20,12 @@ class ChatInput extends React.Component {
 
     // Call the onSend callback with the chatInput message
     this.props.onSend(this.state.chatInput);
+
+            // <input className="text" type="text"
+          // onChange={this.textChangeHandler}
+          // value={this.state.chatInput}
+          // placeholder="Write a message..."
+          // required />
   }
 
   textChangeHandler(event)  {
@@ -27,13 +34,25 @@ class ChatInput extends React.Component {
 
   render() {
     return (
+
       <form className="chat-input" onSubmit={this.submitHandler}>
-        <input className="text" type="text"
+<FormGroup>
+    <InputGroup>
+      <FormControl 
+          className= "text" 
+          type="text"
           onChange={this.textChangeHandler}
           value={this.state.chatInput}
           placeholder="Write a message..."
           required />
+      <InputGroup.Button>
+      <Button type="submit">Send</Button>
+      </InputGroup.Button>
+    </InputGroup>
+  </FormGroup>
       </form>
+        
+
     );
   }
 }

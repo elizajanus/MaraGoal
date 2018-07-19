@@ -1,18 +1,17 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Lustria',
-  serif;
-  height: 100%;
-}
-
-html {
-  background: url(/images/done.jpg) no-repeat center center fixed;
+  font-family: 'Lustria', serif;
+  min-height: 100%;
+  
+  background-color: #000000;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  }
+  color: black;
+
+}
 
 .bg-img {
   background-image: url(/images/done.jpg);
@@ -29,7 +28,6 @@ html {
 
 .name {
   font-size: 70pt;
-  
 }
 
 .footie {
@@ -40,4 +38,18 @@ html {
   padding: 1rem;
   background-color: #efefef;
   text-align: center;
+}
+
+#root > div {
+  position: relative;
+}
+
+#root > div::after {
+  display: block;
+  content: '';
+  position: absolute;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: url(/images/done.jpg) no-repeat center center fixed;
+  opacity: 0.33; 
+  z-index: -1;
 }
